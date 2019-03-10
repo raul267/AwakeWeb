@@ -2,7 +2,6 @@
 /*  1.  Form CSS
 /*----------------------------------------*/
 .logo{
-	padding-top:30px;
 	text-align:center;
 }
 .login-title{
@@ -15,6 +14,7 @@
 	background:#fff;
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 	padding:20px;
+	border-radius: 20px;
 }
 .login-input-area input[type="email"], .login-input-area input[type="password"], .login-input-area input[type="text"]{
 	width:100%;
@@ -240,7 +240,7 @@
 }
 .rating > input:checked ~ label, .rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
   color: #03a9f4;
-} 
+}
 .rating > input:checked + label:hover, .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, .rating > input:checked ~ label:hover ~ label {
   color: #03a9f4;
@@ -289,7 +289,7 @@
 	font-size: 15px;
 	line-height: 27px;
 }
-.ui-datepicker-prev, 
+.ui-datepicker-prev,
 .ui-datepicker-next {
 	position: absolute;
 	top: 0;
@@ -324,7 +324,7 @@
 	color: #404040;
 }
 .ui-datepicker-calendar a:hover {
-	background: rgba(0,0,0,.05);	
+	background: rgba(0,0,0,.05);
 }
 .ui-datepicker-calendar span {
 	color: #bfbfbf;
@@ -334,7 +334,7 @@
 }
 .ui-datepicker-calendar .ui-state-active {
 	background: rgba(0,0,0,.05);
-	cursor: default;	
+	cursor: default;
 }
 .ui-datepicker-inline {
 	border: 2px solid #e5e5e5;
