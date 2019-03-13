@@ -50,6 +50,10 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- css proipios
+    ============================================ -->
+    <link rel="stylesheet" href="../assets/css/miCSS.css">
     <!-- modernizr JS
 		============================================ -->
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -65,10 +69,10 @@
         <div class="left-sidebar-pro">
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <a href="#"><img src="../assets/img/message/1.jpg" alt="" />
+                    <a href="#"><img src="../assets/img/perfil/yo.jpg" alt="" />
                     </a>
-                    <h3>Andrar Son</h3>
-                    <p>Developer</p>
+                    <h3>Raul Strappa</h3>
+                    <p>Administrador</p>
                     <strong>AP+</strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
@@ -76,13 +80,32 @@
                         <li class="nav-item">
                             <a href="#" role="button" ><i class="fa big-icon fa-home"></i> <span class="mini-dn">Inicio</span> <span class=><i class=""></i></span></a>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Correo</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Mensajes</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="inbox.html" class="dropdown-item">Bandeja de entrada</a>
                                 <a href="view-mail.html" class="dropdown-item">Escribir correo</a>
                             </div>
                         </li>
-                        
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-plus"></i> <span class="mini-dn">Agregar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="inbox.html" class="dropdown-item">Usuario</a>
+                                <a href="view-mail.html" class="dropdown-item">Comunidad</a>
+                                <a href="inbox.html" class="dropdown-item">Alarma</a>
+                                <a href="view-mail.html" class="dropdown-item">Edificio</a>
+                                <a href="view-mail.html" class="dropdown-item">Tarea</a>
+                                <a href="view-mail.html" class="dropdown-item">Asignar conserje</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-eye"></i> <span class="mini-dn">Listar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="inbox.html" class="dropdown-item">Usuarios</a>
+                                <a href="view-mail.html" class="dropdown-item">Comunidades</a>
+                                <a href="inbox.html" class="dropdown-item">Alarmas</a>
+                                <a href="view-mail.html" class="dropdown-item">Edificios</a>
+                                <a href="view-mail.html" class="dropdown-item">Tareas</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -233,7 +256,7 @@
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
-                                                <span class="admin-name">Advanda Cro</span>
+                                                <span class="admin-name">Opciones</span>
                                                 <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
@@ -711,116 +734,20 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="profile.html">Profile</a>
+
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Agregar <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                            <ul id="demo" class="collapse dropdown-header-top">
+                                                <li><a href="inbox.html">Comunidad</a>
                                                 </li>
-                                                <li><a href="contact-client.html">Contact Client</a>
+                                                <li><a href="view-mail.html">Edificio</a>
                                                 </li>
-                                                <li><a href="contact-client-v.1.html">Contact Client v.1</a>
+                                                <li><a href="view-mail.html">Alarma</a>
                                                 </li>
-                                                <li><a href="project-list.html">Project List</a>
-                                                </li>
-                                                <li><a href="project-details.html">Project Details</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                                <li><a href="google-map.html">Google Map</a>
-                                                </li>
-                                                <li><a href="data-maps.html">Data Maps</a>
-                                                </li>
-                                                <li><a href="pdf-viewer.html">Pdf Viewer</a>
-                                                </li>
-                                                <li><a href="x-editable.html">X-Editable</a>
-                                                </li>
-                                                <li><a href="code-editor.html">Code Editor</a>
-                                                </li>
-                                                <li><a href="tree-view.html">Tree View</a>
-                                                </li>
-                                                <li><a href="preloader.html">Preloader</a>
-                                                </li>
-                                                <li><a href="images-cropper.html">Images Cropper</a>
+                                                <li><a href="view-mail.html">Usuarios</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="bar-charts.html">Bar Charts</a>
-                                                </li>
-                                                <li><a href="line-charts.html">Line Charts</a>
-                                                </li>
-                                                <li><a href="area-charts.html">Area Charts</a>
-                                                </li>
-                                                <li><a href="rounded-chart.html">Rounded Charts</a>
-                                                </li>
-                                                <li><a href="c3.html">C3 Charts</a>
-                                                </li>
-                                                <li><a href="sparkline.html">Sparkline Charts</a>
-                                                </li>
-                                                <li><a href="peity.html">Peity Charts</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Static Table</a>
-                                                </li>
-                                                <li><a href="data-table.html">Data Table</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="captcha.html">Captcha</a>
-                                                </li>
-                                                <li><a href="checkout.html">Checkout</a>
-                                                </li>
-                                                <li><a href="contact.html">Contacts</a>
-                                                </li>
-                                                <li><a href="review.html">Review</a>
-                                                </li>
-                                                <li><a href="order.html">Order</a>
-                                                </li>
-                                                <li><a href="comment.html">Comment</a>
-                                                </li>
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -862,334 +789,78 @@
                                             <thead>
                                                 <tr>
                                                     <th data-field="state" data-checkbox="true"></th>
-                                                    <th data-field="id">ID</th>
-                                                    <th data-field="name" data-editable="true">Project</th>
-                                                    <th data-field="email" data-editable="true">Email</th>
-                                                    <th data-field="phone" data-editable="true">Phone</th>
-                                                    <th data-field="company" data-editable="true">Company</th>
-                                                    <th data-field="complete">Completed</th>
-                                                    <th data-field="task" data-editable="true">Task</th>
-                                                    <th data-field="date" data-editable="true">Date</th>
-                                                    <th data-field="price" data-editable="true">Price</th>
-                                                    <th data-field="action">Action</th>
+                                                    <th data-field="Nombre" data-editable="true">Nombre</th>
+                                                    <th data-field="Direccion" data-editable="true">Direccion</th>
+                                                    <th data-field="Administrador" data-editable="true">Administrador</th>
+                                                    <th data-field="Numero Administrador" data-editable="true">Numero admin</th>
+                                                    <th data-field="Contactar Administrador" data-editable="true">Contactar admin</th>
+                                                    <th data-field="Conserjes" data-editable="true">Conserjes</th>
+                                                    <th data-field="Ver edificios" data-editable="true">Ver edificios</th>
+                                                    <th data-field="Editar" data-editable="true">Editar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td></td>
-                                                    <td>1</td>
-                                                    <td>Web Development</td>
-                                                    <td>admin@uttara.com</td>
-                                                    <td>+8801962067309</td>
-                                                    <td>Aber Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">1/6</span>
-                                                    </td>
-                                                    <td>10%</td>
-                                                    <td>Jul 14, 2018</td>
-                                                    <td>$5455</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
+                                                    <td>Comunidad Manquehue</td>
+                                                    <td>cerro colorado 4874</td>
+                                                    <td>Julio</td>
+                                                    <td>+56988542674</td>
+                                                    <td class="centrado"><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></td>
+                                                    <td><div class="support-list-img">
+                                                        <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
+                                                        </a>
+                                                        <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
+                                                        </a>
+                                                        <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
+                                                        </a>
+                                                        <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
+                                                        </a>
+                                                    </div></td>
+                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
+                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
-                                                    <td>2</td>
-                                                    <td>Graphic Design</td>
-                                                    <td>fox@itpark.com</td>
-                                                    <td>+8801762067304</td>
-                                                    <td>Abitibi Inc.</td>
-                                                    <td class="datatable-ct"><span class="pie">230/360</span>
-                                                    </td>
-                                                    <td>70%</td>
-                                                    <td>fab 2, 2018</td>
-                                                    <td>$8756</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
+                                                  <td></td>
+                                                  <td>Comunidad Triste</td>
+                                                  <td>cerro tonto 4874</td>
+                                                  <td>Julio</td>
+                                                  <td>+56988542674</td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-envelope"></span></a></td>
+                                                  <td><div class="support-list-img">
+                                                      <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
+                                                      </a>
+                                                  </div></td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
-                                                    <td>3</td>
-                                                    <td>Software Development</td>
-                                                    <td>gumre@hash.com</td>
-                                                    <td>+8801862067308</td>
-                                                    <td>Acambis plc</td>
-                                                    <td class="datatable-ct"><span class="pie">0.42/1.461</span>
-                                                    </td>
-                                                    <td>5%</td>
-                                                    <td>Seb 5, 2018</td>
-                                                    <td>$9875</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
+                                                  <td></td>
+                                                  <td>Comunidad Inez de suarez</td>
+                                                  <td>Francisco Bilbao 1841</td>
+                                                  <td>Julio</td>
+                                                  <td>+56988542674</td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-envelope"></span></a></td>
+                                                  <td><div class="support-list-img">
+                                                      <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
+                                                      </a>
+                                                      <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
+                                                      </a>
+                                                  </div></td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
+                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
                                                 </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>4</td>
-                                                    <td>Woocommerce</td>
-                                                    <td>kyum@frok.com</td>
-                                                    <td>+8801962066547</td>
-                                                    <td>ACLN Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Oct 10, 2018</td>
-                                                    <td>$3254</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>5</td>
-                                                    <td>Joomla</td>
-                                                    <td>jams@game.com</td>
-                                                    <td>+8801962098745</td>
-                                                    <td>ACS-Tech Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">200,133</span>
-                                                    </td>
-                                                    <td>80%</td>
-                                                    <td>Nov 20, 2018</td>
-                                                    <td>$58745</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>6</td>
-                                                    <td>Wordpress</td>
-                                                    <td>flat@yem.com</td>
-                                                    <td>+8801962254781</td>
-                                                    <td>ActFits.com Inc.</td>
-                                                    <td class="datatable-ct"><span class="pie">0.42,1.051</span>
-                                                    </td>
-                                                    <td>30%</td>
-                                                    <td>Aug 25, 2018</td>
-                                                    <td>$789879</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>7</td>
-                                                    <td>Ecommerce</td>
-                                                    <td>hasan@wpm.com</td>
-                                                    <td>+8801962254863</td>
-                                                    <td>ActivCard S.A.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>July 17, 2018</td>
-                                                    <td>$21424</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>8</td>
-                                                    <td>Android Apps</td>
-                                                    <td>ATM@devep.com</td>
-                                                    <td>+8801962875469</td>
-                                                    <td>Adecco S.A.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>June 11, 2018</td>
-                                                    <td>$78978</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>9</td>
-                                                    <td>Prestashop</td>
-                                                    <td>presta@Prest.com</td>
-                                                    <td>+8801962067524</td>
-                                                    <td>AEGON N.V.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>May 9, 2018</td>
-                                                    <td>$45645</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>10</td>
-                                                    <td>Game Development</td>
-                                                    <td>Dev@game.com</td>
-                                                    <td>+8801962067457</td>
-                                                    <td>Aerco Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>April 5, 2018</td>
-                                                    <td>$4564545</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>11</td>
-                                                    <td>Angular Js</td>
-                                                    <td>gular@angular.com</td>
-                                                    <td>+8801962067124</td>
-                                                    <td>Agrium Inc.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Dec 1, 2018</td>
-                                                    <td>$645455</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>12</td>
-                                                    <td>Opencart</td>
-                                                    <td>open@cart.com</td>
-                                                    <td>+8801962067587</td>
-                                                    <td>Air Canada</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Jan 6, 2018</td>
-                                                    <td>$78978</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>13</td>
-                                                    <td>Education</td>
-                                                    <td>john@example.com</td>
-                                                    <td>+8801962067471</td>
-                                                    <td>Alcan Inc.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Feb 6, 2016</td>
-                                                    <td>$456456</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>14</td>
-                                                    <td>Construction</td>
-                                                    <td>mary@example.com</td>
-                                                    <td>+8801962012457</td>
-                                                    <td>Alcatel</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Jan 6, 2016</td>
-                                                    <td>$87978</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>15</td>
-                                                    <td>Real Estate</td>
-                                                    <td>july@example.com</td>
-                                                    <td>+8801962067309</td>
-                                                    <td>Alstom</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Dec 1, 2016</td>
-                                                    <td>$454554</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>16</td>
-                                                    <td>Personal Regume</td>
-                                                    <td>john@example.com</td>
-                                                    <td>+8801962067306</td>
-                                                    <td>Altarex Corp.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>May 9, 2016</td>
-                                                    <td>$564555</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>17</td>
-                                                    <td>Admin Template</td>
-                                                    <td>mary@example.com</td>
-                                                    <td>+8801962067305</td>
-                                                    <td>Alvarion Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>June 11, 2016</td>
-                                                    <td>$454565</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>18</td>
-                                                    <td>FrontEnd</td>
-                                                    <td>july@example.com</td>
-                                                    <td>+8801962067304</td>
-                                                    <td>Amcor Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>May 9, 2015</td>
-                                                    <td>$456546</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>19</td>
-                                                    <td>Backend</td>
-                                                    <td>john@range.com</td>
-                                                    <td>+8801962067303</td>
-                                                    <td>Amdocs Ltd.</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Feb 9, 2014</td>
-                                                    <td>$564554</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>20</td>
-                                                    <td>Java Advance</td>
-                                                    <td>lamon@ghs.com</td>
-                                                    <td>+8801962067302</td>
-                                                    <td>Amersham plc</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>July 6, 2014</td>
-                                                    <td>$789889</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>21</td>
-                                                    <td>Jquery Advance</td>
-                                                    <td>hasad@uth.com</td>
-                                                    <td>+8801962067301</td>
-                                                    <td>Amvescap plc</td>
-                                                    <td class="datatable-ct"><span class="pie">2,7</span>
-                                                    </td>
-                                                    <td>15%</td>
-                                                    <td>Jun 6, 2013</td>
-                                                    <td>$4565656</td>
-                                                    <td class="datatable-ct"><i class="fa fa-check"></i>
-                                                    </td>
-                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -1208,7 +879,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer-copy-right">
-                        <p>Copyright &#169; 2018 Colorlib All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>Desarrollado por: <a href="https://tecnoactive.cl"><img src="../assets/img/logo/tecnoActive.png"></img></a></p>
+                        <br><p style="font-size:6px;">Diseñado por:<a href="https://colorlib.com">Colorlib</a>.</p>
                     </div>
                 </div>
             </div>
