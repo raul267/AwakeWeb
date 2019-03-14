@@ -2,3 +2,36 @@
 {
   text-align: center;
 }
+
+.fotoPerfilChica
+{
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+.estadoSuccess
+{
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: green;
+
+}
+.estadoWarning
+{
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: yellow;
+
+}
+.estadoDanger
+{
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+
+}

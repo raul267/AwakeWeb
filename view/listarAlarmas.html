@@ -44,9 +44,6 @@
     <!-- forms CSS
 		============================================ -->
     <link rel="stylesheet" href="../assets/css/form/all-type-forms.css">
-    <!-- form CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/form.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="../assets/style.css">
@@ -761,184 +758,208 @@
                 </div>
             </div>
             <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
 
-            <div class="login-form-area mg-t-30 mg-b-40">
+            <!-- Data table area Start-->
+            <div class="admin-dashone-data-table-area">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-3"></div>
-                        <form id="adminpro-contact-form" class="adminpro-form">
-                            <div class="col-lg-6">
-                                <div class="login-bg">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="logo">
-                                                <a href="#"><img src="img/logo/logo.png" alt="" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="login-title">
-                                                <h1>Formulario de registro</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="login-input-head">
-                                                <p>Nomre Completo</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="login-input-area">
-                                                <input type="text" name="nombre" />
-                                                <i class="fa fa-tag login-user"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="login-input-head">
-                                                <p>rut</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="login-input-area">
-                                                <input type="text" name="rut" />
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="login-input-head">
-                                                <p>Correo Electronico</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="login-input-area">
-                                                <input type="email" name="correo" />
-                                                <i class="fa fa-tag login-user"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="login-input-head">
-                                                <p>Tipo de usuario</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="login-input-area">
-                                                <select class="form-control custom-select-value">
-                                                  <option value="">Seleccione un tipo de usuario</option>
-                                                  <option value="">Administrador</option>
-                                                  <option value="">Mundano</option>
-                                                </select>
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-lg-4"></div>
-                                        <div class="col-lg-8">
-                                            <div class="login-button-pro">
-                                                <button type="submit" class="login-button login-button-lg">Crear</button>
-                                            </div>
+                        <div class="col-lg-12">
+                            <div class="sparkline8-list shadow-reset">
+                                <div class="sparkline8-hd">
+                                    <div class="main-sparkline8-hd">
+                                        <h1>Alarmas</h1>
+                                        <div class="sparkline8-outline-icon">
+                                            <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                            <span><i class="fa fa-wrench"></i></span>
+                                            <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="sparkline8-graph">
+                                    <div class="datatable-dashv1-list custom-datatable-overright">
+                                        <div id="toolbar">
+                                            <select class="form-control">
+                                                <option value="">Exportacion basica</option>
+                                                <option value="all">Exportar todo</option>
+                                                <option value="selected">Exportar elementos seleccionados</option>
+                                            </select>
+                                        </div>
+                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                            <thead>
+                                                <tr>
+                                                    <th data-field="state" data-checkbox="true"></th>
+                                                    <th data-field="Estado" data-editable="true">Estado</th>
+                                                    <th data-field="Comunidad" data-editable="true">Comunidad</th>
+                                                    <th data-field="Fecha-hora" data-editable="true">Fecha-hora</th>
+                                                    <th data-field="Tiempo alarma" data-editable="true">Tiempo alarma</th>
+                                                    <th data-field="Tiempo respuesta" data-editable="true">Tiempo respuesta</th>
+                                                    <th data-field="Editar" data-editable="true">Editar</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><button class="estadoSuccess"></button></td>
+                                                    <td>Comunidad Triste</td>
+                                                    <td>15/1/2019 2:40</td>
+                                                    <td>6 segundos</td>
+                                                    <td>2 segundos</td>
+                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><button class="estadoDanger"></button></td>
+                                                    <td>Comunidad Triste</td>
+                                                    <td>15/1/2019 2:40</td>
+                                                    <td>6 segundos</td>
+                                                    <td>2 segundos</td>
+                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><button class="estadoWarning"></button></td>
+                                                    <td>Comunidad Triste</td>
+                                                    <td>15/1/2019 2:40</td>
+                                                    <td>6 segundos</td>
+                                                    <td>9 segundos</td>
+                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                        </form>
-                        <div class="col-lg-3"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Contact End-->
-            </div>
-        </div>
-        <!-- Footer Start-->
-        <div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Desarrollado por: <a href="https://tecnoactive.cl"><img src="../assets/img/logo/tecnoActive.png"></img></a></p>
-                            <br><p style="font-size:6px;">Diseñado por:<a href="https://colorlib.com">Colorlib</a>.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Data table area End-->
         </div>
+    </div>
+    <!-- Footer Start-->
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>Desarrollado por: <a href="https://tecnoactive.cl"><img src="../assets/img/logo/tecnoActive.png"></img></a></p>
+                        <br><p style="font-size:6px;">Diseñado por:<a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Footer End-->
-        <!-- jquery
-    		============================================ -->
-        <script src="../assets/js/vendor/jquery-1.11.3.min.js"></script>
-        <!-- bootstrap JS
-    		============================================ -->
-        <script src="../assets/js/bootstrap.min.js"></script>
-        <!-- meanmenu JS
-    		============================================ -->
-        <script src="../assets/js/jquery.meanmenu.js"></script>
-        <!-- mCustomScrollbar JS
-    		============================================ -->
-        <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <!-- sticky JS
-    		============================================ -->
-        <script src="../assets/js/jquery.sticky.js"></script>
-        <!-- scrollUp JS
-    		============================================ -->
-        <script src="../assets/js/jquery.scrollUp.min.js"></script>
-        <!-- form validate JS
-    		============================================ -->
-        <script src="../assets/js/jquery.form.min.js"></script>
-        <script src="../assets/js/jquery.validate.min.js"></script>
-        <script src="../assets/js/form-active.js"></script>
-        <!-- main JS
-    		============================================ -->
-        <script src="../assets/js/main.js"></script>
-    </body>
+    </div>
+    <!-- Footer End-->
+    <!-- Chat Box Start-->
+    <div class="chat-list-wrap">
+        <div class="chat-list-adminpro">
+            <div class="chat-button">
+                <span data-toggle="collapse" data-target="#chat" class="chat-icon-link"><i class="fa fa-comments"></i></span>
+            </div>
+            <div id="chat" class="collapse chat-box-wrap shadow-reset animated zoomInLeft">
+                <div class="chat-main-list">
+                    <div class="chat-heading">
+                        <h2>Messanger</h2>
+                    </div>
+                    <div class="chat-content chat-scrollbar">
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:15 am</span></h3>
+                            <p>Hi, what you are doing and where are you gay?</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:10 am</span></h3>
+                            <p>Now working in graphic design with coding and you?</p>
+                        </div>
+                        <div class="author-chat">
+                            <h3>Monica <span class="chat-date">10:05 am</span></h3>
+                            <p>Practice in programming</p>
+                        </div>
+                        <div class="client-chat">
+                            <h3>Mamun <span class="chat-date">10:02 am</span></h3>
+                            <p>That's good man! carry on...</p>
+                        </div>
+                    </div>
+                    <div class="chat-send">
+                        <input type="text" placeholder="Type..." />
+                        <span><button type="submit">Send</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chat Box End-->
+    <!-- jquery
+		============================================ -->
+    <script src="../assets/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="../assets/js/jquery.meanmenu.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="../assets/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="../assets/js/jquery.scrollUp.min.js"></script>
+    <!-- counterup JS
+		============================================ -->
+    <script src="../assets/js/counterup/jquery.counterup.min.js"></script>
+    <script src="../assets/js/counterup/waypoints.min.js"></script>
+    <script src="../assets/js/counterup/counterup-active.js"></script>
+    <!-- peity JS
+		============================================ -->
+    <script src="../assets/js/peity/jquery.peity.min.js"></script>
+    <script src="../assets/js/peity/peity-active.js"></script>
+    <!-- sparkline JS
+		============================================ -->
+    <script src="../assets/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="../assets/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+		============================================ -->
+    <script src="../assets/js/flot/jquery.flot.js"></script>
+    <script src="../assets/js/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="../assets/js/flot/jquery.flot.spline.js"></script>
+    <script src="../assets/js/flot/jquery.flot.resize.js"></script>
+    <script src="../assets/js/flot/jquery.flot.pie.js"></script>
+    <script src="../assets/js/flot/Chart.min.js"></script>
+    <script src="../assets/js/flot/flot-active.js"></script>
+    <!-- map JS
+		============================================ -->
+    <script src="../assets/js/map/raphael.min.js"></script>
+    <script src="../assets/js/map/jquery.mapael.js"></script>
+    <script src="../assets/js/map/france_departments.js"></script>
+    <script src="../assets/js/map/world_countries.js"></script>
+    <script src="../assets/js/map/usa_states.js"></script>
+    <script src="../assets/js/map/map-active.js"></script>
+    <!-- data table JS
+		============================================ -->
+    <script src="../assets/js/data-table/bootstrap-table.js"></script>
+    <script src="../assets/js/data-table/tableExport.js"></script>
+    <script src="../assets/js/data-table/data-table-active.js"></script>
+  <!--  <script src="../assets/js/data-table/bootstrap-table-editable.js"></script>-->
+    <script src="../assets/js/data-table/bootstrap-editable.js"></script>
+    <script src="../assets/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="../assets/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="../assets/js/data-table/bootstrap-table-export.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="../assets/js/main.js"></script>
 
-    </html>
-    <link rel="stylesheet" href="../assets/css/adminpro-custon-icon.css">
-    <!-- meanmenu icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/meanmenu.min.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/jquery.mCustomScrollbar.min.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <!-- data-table CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/data-table/bootstrap-table.css">
-    <link rel="stylesheet" href="../assets/css/data-table/bootstrap-editable.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/normalize.css">
-    <!-- charts C3 CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/c3.min.css">
-    <!-- forms CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/form/all-type-forms.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').dataTable({language: {
+      url: '//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json'}
+    });});
+</script>
+</body>
 
-    <!-- css proipios
-    ============================================ -->
-    <link rel="stylesheet" href="../assets/css/miCSS.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
-
-</head>
+</html>
