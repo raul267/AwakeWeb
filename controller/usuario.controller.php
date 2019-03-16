@@ -4,6 +4,7 @@ require_once 'model/comuna.php';
 require_once 'model/provincia.php';
 require_once 'model/region.php';
 require_once 'model/tipo.php';
+session_start();
 class UsuarioController
 {
   private $model_us;
@@ -40,6 +41,18 @@ class UsuarioController
       require_once 'view/registrar.php';
       require_once 'view/footerLogin.php';
     }
+
+    public function Dashboard()
+    {
+      $u = new Usuario();
+      $r = new Region();
+      $c = new Comuna();
+      $t = new tipoUsuario();
+      require_once 'view/header.php';
+      require_once 'view/dashboard.php';
+      require_once 'view/footer.php';
+    }
+
 
     //------------------------------------Metodos
 
@@ -78,18 +91,31 @@ class UsuarioController
 
     public function Ingresar()
     {
+       date_default_timezone_set('America/Santiago');
       $u = new Usuario();
       $rut= $_REQUEST['rut'];
       $pass = $_REQUEST['pass'];
       $u = $this->model_us->listarRUT($rut);
-      if ($rut == $u->rut && $ass == $u->password)
+      if ($rut == $u->rut && $pass == $u->password)
       {
+        $_SESSION['nombre'] = $u->nombre;
+        $_SESSION['id'] = $u->idUsuario;
+        $_SESSION['tipoUsuario'] = $u->tipoUsuario;
+        $_SESSION['ultimaConxion'] = $u->ultimaConxion;
+        $_SESSION['fotoPerfil'] = $u->fotoPerfil;
         header('Location: ?c=Usuario&a=Dashboard');
+
       }
       else
       {
-        echo '<script language="javascript">alert("Error al ingresar"); window.location.href="index.php?c=Usuario&a=Index";</script>';
+        echo '<script language="javascript">alert("Error al ingresar"); </script>';
       }
+    }
+
+    public function logOut()
+    {
+      session_destroy();
+      header('Location:index.php');
     }
 
 }
