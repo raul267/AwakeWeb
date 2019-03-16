@@ -3,19 +3,18 @@
   {
 
     private $conn;
-    private $nombre;
-    private $rut;
-    private $password;
-    private $correo;
-    private $idComunidad;
-    private $direccion;
-    private $idComuna;
-    private $idRegion;
-    private $nacionalidad;
-    private $fotoPerfil;
-    private $fechaNacimiento;
-    private $ultimaConexion;
-    private $tipoUsuario;
+    public $rut;
+    public $password;
+    public $correo;
+    public $idComunidad;
+    public $direccion;
+    public $idComuna;
+    public $idRegion;
+    public $nacionalidad;
+    public $fotoPerfil;
+    public $fechaNacimiento;
+    public $ultimaConexion;
+    public $tipoUsuario;
 
     public function __CONSTRUCT()
      {
@@ -46,6 +45,13 @@
      {
         $sql = $this->conn->prepare("SELECT * FROM usuario where idUsuario =?");
         $sql->execute($id);
+        return $sql->fetch(PDO::FETCH_OBJ);
+     }
+
+     public function listarRUT($rut)
+     {
+        $sql = $this->conn->prepare("SELECT * FROM usuario where rut =?");
+        $sql->execute($rut);
         return $sql->fetch(PDO::FETCH_OBJ);
      }
 
