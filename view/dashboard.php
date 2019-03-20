@@ -42,65 +42,28 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td></td>
-                                                    <td>Comunidad Manquehue</td>
-                                                    <td>cerro colorado 4874</td>
-                                                    <td>Julio</td>
-                                                    <td>+56988542674</td>
-                                                    <td class="centrado"><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></td>
-                                                    <td><div class="support-list-img">
-                                                        <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
-                                                        </a>
-                                                    </div></td>
-                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
-                                                    <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
-                                                </tr>
-                                                <tr>
-                                                  <td></td>
-                                                  <td>Comunidad Triste</td>
-                                                  <td>cerro tonto 4874</td>
-                                                  <td>Julio</td>
-                                                  <td>+56988542674</td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-envelope"></span></a></td>
-                                                  <td><div class="support-list-img">
-                                                      <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
-                                                      </a>
-                                                  </div></td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
-                                                </tr>
-                                                <tr>
-                                                  <td></td>
-                                                  <td>Comunidad Inez de suarez</td>
-                                                  <td>Francisco Bilbao 1841</td>
-                                                  <td>Julio</td>
-                                                  <td>+56988542674</td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-envelope"></span></a></td>
-                                                  <td><div class="support-list-img">
-                                                      <a href="#"><img src="../assets/img/notification/1.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/2.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/3.jpg" alt="" />
-                                                      </a>
-                                                      <a href="#"><img src="../assets/img/notification/4.jpg" alt="" />
-                                                      </a>
-                                                  </div></td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
-                                                  <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
-                                                </tr>
+                                                    <?php foreach ($co->listar() as $row): ?>
+                                                      <td></td>
+                                                      <td><?php echo $row->nombreComunidad ?></td>
+                                                      <td><?php echo $row->direccionComunidad ?></td>
+                                                      <td><?php echo $row->nombre ?></td>
+                                                      <td><?php echo $row->telefonoUsuario ?></td>
+                                                      <td class="centrado"><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></td>
+                                                      <td><div class="support-list-img">
+                                                          <a href="#"><img src="assets/img/notification/1.jpg" alt="" />
+                                                          </a>
+                                                          <a href="#"><img src="assets/img/notification/2.jpg" alt="" />
+                                                          </a>
+                                                          <a href="#"><img src="assets/img/notification/3.jpg" alt="" />
+                                                          </a>
+                                                          <a href="#"><img src="assets/img/notification/4.jpg" alt="" />
+                                                          </a>
+                                                      </div></td>
+                                                      <td class="centrado"><a href="#"<span class="glyphicon glyphicon-eye-open"></span></a></td>
+                                                      <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                  </tr>
+                                                    <?php endforeach; ?>
+
 
                                             </tbody>
                                         </table>
@@ -114,4 +77,3 @@
             <!-- Data table area End-->
         </div>
     </div>
-  

@@ -44,8 +44,12 @@
     <!-- forms CSS
 		============================================ -->
     <link rel="stylesheet" href="assets/css/form/all-type-forms.css">
+
     <!-- style CSS
 		============================================ -->
+    <link rel="stylesheet" href="assets/css/form.css">
+    <!-- style CSS
+    ============================================ -->
     <link rel="stylesheet" href="assets/style.css">
     <!-- responsive CSS
 		============================================ -->
@@ -72,7 +76,7 @@
                     <a href="#"><img src="<?php echo $_SESSION['fotoPerfil'] ?>" alt="" />
                     </a>
                     <h3><?php echo $_SESSION['nombre'] ?></h3>
-                    <p></p>
+                    <p>Ultima coneccion: <br> <?php echo $_SESSION['ultimaConexion'] ?></p>
                     <strong>AP+</strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
@@ -88,10 +92,10 @@
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-plus"></i> <span class="mini-dn">Agregar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="inbox.html" class="dropdown-item">Usuario</a>
-                                <a href="view-mail.html" class="dropdown-item">Comunidad</a>
+                                <a href="?c=Usuario&a=IngresarUsuarios" class="dropdown-item">Usuario</a>
+                                <a href="?c=Usuario&a=IngresarComunidad" class="dropdown-item">Comunidad</a>
                                 <a href="inbox.html" class="dropdown-item">Alarma</a>
-                                <a href="view-mail.html" class="dropdown-item">Edificio</a>
+                                <a href="?c=Usuario&a=IngresarEdificio" class="dropdown-item">Edificio</a>
                                 <a href="view-mail.html" class="dropdown-item">Tarea</a>
                                 <a href="view-mail.html" class="dropdown-item">Asignar conserje</a>
                             </div>
@@ -99,10 +103,10 @@
 
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-eye"></i> <span class="mini-dn">Listar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="inbox.html" class="dropdown-item">Usuarios</a>
-                                <a href="view-mail.html" class="dropdown-item">Comunidades</a>
+                                <a href="?c=Usuario&a=Usuarios" class="dropdown-item">Usuarios</a>
+                                <a href="?c=Usuario&a=Comunidades" class="dropdown-item">Comunidades</a>
                                 <a href="inbox.html" class="dropdown-item">Alarmas</a>
-                                <a href="view-mail.html" class="dropdown-item">Edificios</a>
+                                <a href="?c=Usuario&a=Edificios" class="dropdown-item">Edificios</a>
                                 <a href="view-mail.html" class="dropdown-item">Tareas</a>
                             </div>
                         </li>

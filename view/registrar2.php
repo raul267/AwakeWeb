@@ -4,33 +4,28 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form" action="?c=Usuario&a=RegistrarUsuarios" method="post" autocomplete="on" enctype="multipart/form-data">
+				<form class="login100-form validate-form" action="?c=Usuario&a=RegistrarUsuarios2" method="post" autocomplete="on" enctype="multipart/form-data">
 					<span class="login100-form-title p-b-70">
 						¡Registrate!
 					</span>
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Selecciona un tipo de usuario">
-						<select class="input100" type="text" name="idTipo" id="idTipo">
-							<option value=""></option>
-							<?php foreach ($t->listar() as $row): ?>
-								<option value="<?php echo $row->idTipo ?>"><?php echo $row->descripcion ?></option>
-							<?php endforeach; ?>
-						</select>
-						<span class="focus-input100" data-placeholder="Selecciona un tipo de usuario"></span>
-					</div>
+
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresa el nombre">
-						<input class="input100" type="text" name="nombre" id="nombre">
-						<span class="focus-input100" data-placeholder="Ingrese su nombre completo"></span>
+            <label>Ingresa tu nombre</label>
+            <input class="input100" type="text" name="nombre" id="nombre" value="<?php echo $_SESSION['nombre'] ?>">
+
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresa el rut">
-						<input class="input100" type="text" name="rut" id="rut">
-						<span class="focus-input100" data-placeholder="Ingrese su rut"></span>
+            <label>Ingresa tu rut</label>
+            <input class="input100" type="text" name="rut" id="rut" value="<?php echo $_SESSION['rut'] ?>">
+
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresa el correo">
-						<input class="input100" type="text" name="correo" id="correo">
-						<span class="focus-input100" data-placeholder="Ingrese su correo electronico"></span>
+            <label>Ingresa tu correo</label>
+            <input class="input100" type="text" name="correo" id="correo" value="<?php echo $_SESSION['correo'] ?>">
+
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresa tu fecha de nacimiento">
@@ -83,9 +78,9 @@
 						<label for="">Selecciona una foto de perfil</label>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa tu nueva contraseña">
 						<input class="input100" type="password" name="password" id="password">
-						<span class="focus-input100" data-placeholder="Confirma la contraseña"></span>
+						<span class="focus-input100" data-placeholder="Ingresa tu nueva contraseña"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
