@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-03-2019 a las 17:29:02
--- Versión del servidor: 10.1.34-MariaDB
--- Versión de PHP: 7.2.7
+-- Tiempo de generación: 20-03-2019 a las 06:29:01
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -387,12 +387,12 @@ INSERT INTO `comuna` (`idComuna`, `nombreComuna`, `idProvincia`) VALUES
 (331, 'Coihaique', 48),
 (332, 'Lago Verde', 48),
 (333, 'Chile Chico', 49),
-(334, 'R?o Ib??ez', 49),
-(335, 'Ant?rtica', 50),
+(334, 'R@f0o Ib@f1@f2ez', 49),
+(335, 'Ant@f3rtica', 50),
 (336, 'Cabo de Hornos', 50),
 (337, 'Laguna Blanca', 51),
 (338, 'Punta Arenas', 51),
-(339, 'R?o Verde', 51),
+(339, 'R@f4o Verde', 51),
 (340, 'San Gregorio', 51),
 (341, 'Porvenir', 52),
 (342, 'Primavera', 52),
@@ -409,9 +409,19 @@ INSERT INTO `comuna` (`idComuna`, `nombreComuna`, `idProvincia`) VALUES
 CREATE TABLE `comunidad` (
   `idComunidad` int(6) NOT NULL,
   `idAdmin` int(6) NOT NULL,
-  `NombreComunidad` varchar(30) NOT NULL,
-  `Direccion` varchar(30) NOT NULL
+  `nombreComunidad` varchar(30) NOT NULL,
+  `direccionComunidad` varchar(30) NOT NULL,
+  `idRegion` int(20) NOT NULL,
+  `idComuna` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comunidad`
+--
+
+INSERT INTO `comunidad` (`idComunidad`, `idAdmin`, `nombreComunidad`, `direccionComunidad`, `idRegion`, `idComuna`) VALUES
+(1, 1, 'Inez de Suarez', 'Francisco Bilbao 1861', 0, 0),
+(2, 2, 'Comunidad  Triste', 'Alcantara 192', 7, 109);
 
 -- --------------------------------------------------------
 
@@ -422,8 +432,15 @@ CREATE TABLE `comunidad` (
 CREATE TABLE `edificio` (
   `idEdificio` int(6) NOT NULL,
   `idComunidad` int(6) NOT NULL,
-  `Direccion` varchar(200) NOT NULL
+  `direccionEdificio` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `edificio`
+--
+
+INSERT INTO `edificio` (`idEdificio`, `idComunidad`, `direccionEdificio`) VALUES
+(1, 1, 'Francisco bilbao 1861');
 
 -- --------------------------------------------------------
 
@@ -537,12 +554,12 @@ INSERT INTO `region` (`idRegion`, `nombreRegion`, `region_ordinal`) VALUES
 (7, 'Metropolitana de Santiago', 'RM'),
 (8, 'Libertador General Bernardo O\'Higgins', 'VI'),
 (9, 'Maule', 'VII'),
-(10, 'Biob?o', 'VIII'),
-(11, 'La Araucan?a', 'IX'),
-(12, 'Los R?os', 'XIV'),
+(10, 'Biob@f0o', 'VIII'),
+(11, 'La Araucan@f1a', 'IX'),
+(12, 'Los R@f2os', 'XIV'),
 (13, 'Los Lagos', 'X'),
-(14, 'Ais?n del General Carlos Ib??ez del Campo', 'XI'),
-(15, 'Magallanes y de la Ant?rtica Chilena', 'XII');
+(14, 'Ais@f3n del General Carlos Ib@f4@f5ez del Campo', 'XI'),
+(15, 'Magallanes y de la Ant@f6rtica Chilena', 'XII');
 
 -- --------------------------------------------------------
 
@@ -602,15 +619,20 @@ CREATE TABLE `usuario` (
   `fotoPerfil` varchar(200) DEFAULT NULL,
   `fechaNacimiento` date DEFAULT NULL,
   `ultimaConexion` varchar(30) DEFAULT NULL,
-  `idTipo` int(4) NOT NULL DEFAULT '1'
+  `idTipo` int(4) NOT NULL DEFAULT '1',
+  `telefonoUsuario` varchar(60) DEFAULT NULL,
+  `estadoUsuario` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `nombre`, `rut`, `password`, `correo`, `idEdificio`, `direccion`, `idComuna`, `idRegion`, `Nacionalidad`, `fotoPerfil`, `fechaNacimiento`, `ultimaConexion`, `idTipo`) VALUES
-(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', NULL, 0);
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `rut`, `password`, `correo`, `idEdificio`, `direccion`, `idComuna`, `idRegion`, `Nacionalidad`, `fotoPerfil`, `fechaNacimiento`, `ultimaConexion`, `idTipo`, `telefonoUsuario`, `estadoUsuario`) VALUES
+(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', '03/20/2019 2:05am', 0, '+56966576370', 1),
+(2, 'Belen Campos', '17798854-5', '160291', 'bp.campos10@gmail.com', NULL, 'Francisco Bilbao 1861', 118, 7, 'Chilena/o', 'assets/img/perfil/17798854-5.jpg', '1991-02-16', NULL, 1, '+56975860021', 1),
+(3, 'Sujeto prueba', '1-1', 'asd', 'prueba@prueba.cl', NULL, 'Santa Rita 699', 12, 11, 'Chilena/o', 'assets/img/perfil/1-1.jpg', '1123-11-12', '03/20/2019 1:56am', 4, '+56975860021', 1),
+(4, 'weon extranjero', '2-2', 'asd', 'extranjero@gmail.com', NULL, 'Santa rita 699', 2, 2, 'Venezolano', 'assets/img/perfil/2-2.jpg', '2322-02-11', NULL, 2, '+56975860021', 0);
 
 --
 -- Índices para tablas volcadas
@@ -696,13 +718,13 @@ ALTER TABLE `comuna`
 -- AUTO_INCREMENT de la tabla `comunidad`
 --
 ALTER TABLE `comunidad`
-  MODIFY `idComunidad` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `idComunidad` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `edificio`
 --
 ALTER TABLE `edificio`
-  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
@@ -732,13 +754,13 @@ ALTER TABLE `tareas`
 -- AUTO_INCREMENT de la tabla `tipousuario`
 --
 ALTER TABLE `tipousuario`
-  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idTipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
