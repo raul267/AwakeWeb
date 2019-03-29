@@ -183,8 +183,8 @@ class UsuarioController
 
     public function AsignarConserje()
     {
-      $c = new Comunidad();
-      $co = new Conserje();
+      $c = new Edificio();
+      $co = new Usuario();
       require_once 'view/header.php';
       require_once 'view/asignarConserje.php';
       require_once 'view/footer.php';
@@ -389,6 +389,17 @@ class UsuarioController
 
       $this->model_ta->Insertar($t);
       echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Tareas"; </script>';
+    }
+
+    public function AsignarConserjeEdificio()
+    {
+      $usuario = $_REQUEST['idUsuario'];
+      $edificio = $_REQUEST['idEdificio'];
+
+      $this->model_us->AsignarConserje($edificio,$usuario);
+      echo '<script language="javascript">alert("Exito al Asignar Conserje"); window.location.href="index.php?c=Usuario&a=Tareas"; </script>';
+
+
     }
 }
  ?>

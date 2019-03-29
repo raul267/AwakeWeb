@@ -3,7 +3,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3"></div>
-                        <form id="adminpro-contact-form" class="adminpro-form">
+                        <form id="adminpro-contact-form" class="adminpro-form" method="post" action="?c=Usuario&a=AsignarConserjeEdificio">
                             <div class="col-lg-6">
                                 <div class="login-bg">
                                     <div class="row">
@@ -29,9 +29,11 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select class="form-control custom-select-value">
-                                                  <option value="">Selecciona una Comunidad</option>
-                                                  <option value="">Comunidad 1</option>
+                                                <select class="form-control custom-select-value" name="idEdificio">
+                                                  <option value="">Selecciona un Edificio</option>
+                                                  <?php foreach ($c->listar() as $row): ?>
+                                                    <option value="<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></option>
+                                                  <?php endforeach; ?>
                                                 </select>
 
                                             </div>
@@ -45,9 +47,11 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select class="form-control custom-select-value">
+                                                <select class="form-control custom-select-value" name="idUsuario">
                                                   <option value="">Selecciona un conserje</option>
-                                                  <option value="">Conserje 1</option>
+                                              <?php foreach ($co->ListarConserjes() as $row): ?>
+                                                  <option value="<?php echo $row->idUsuario ?>"><?php echo $row->nombre ?></option>
+                                              <?php endforeach; ?>
                                                 </select>
 
                                             </div>
@@ -71,4 +75,3 @@
             <!-- Contact End-->
             </div>
         </div>
-  

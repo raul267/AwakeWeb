@@ -75,6 +75,18 @@
        $sql = $this->conn->prepare("UPDATE `usuario` SET `ultimaConexion`=? WHERE idUsuario = ?");
        $sql->execute(array($ultimaConexion,$id));
      }
+     public function ListarConserjes()
+     {
+       $sql = $this->conn->prepare("SELECT * FROM usuario JOIN tipousuario USING(idTipo) WHERE idTipo = 2");
+       $sql->execute();
+       return $sql->fetchAll(PDO::FETCH_OBJ);
+     }
+
+     public function AsignarConserje($edificio,$usuario)
+     {
+      $sql = $this->conn->prepare("UPDATE usuario SET idEdificio = ? WHERE idUsuario = ?");
+      $sql->execute(array($edificio,$usuario));
+     }
 
   }
  ?>
