@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-03-2019 a las 06:29:01
+-- Tiempo de generación: 29-03-2019 a las 02:25:02
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
 
@@ -31,11 +31,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `alarma` (
   `idAlarma` int(6) NOT NULL,
   `idComunidad` int(6) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `tiempo` int(6) DEFAULT NULL,
-  `estado` int(6) NOT NULL,
+  `fechaAlarma` datetime NOT NULL,
+  `tiempoAlarma` int(6) DEFAULT NULL,
+  `estadoAlarma` int(6) NOT NULL DEFAULT '0',
   `idUsuario` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `alarma`
+--
+
+INSERT INTO `alarma` (`idAlarma`, `idComunidad`, `fechaAlarma`, `tiempoAlarma`, `estadoAlarma`, `idUsuario`) VALUES
+(1, 1, '2019-03-25 03:45:00', NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -440,7 +447,8 @@ CREATE TABLE `edificio` (
 --
 
 INSERT INTO `edificio` (`idEdificio`, `idComunidad`, `direccionEdificio`) VALUES
-(1, 1, 'Francisco bilbao 1861');
+(1, 1, 'Tengo sueño 75'),
+(2, 1, 'Francisco bilbao 1861');
 
 -- --------------------------------------------------------
 
@@ -564,17 +572,25 @@ INSERT INTO `region` (`idRegion`, `nombreRegion`, `region_ordinal`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tareas`
+-- Estructura de tabla para la tabla `tarea`
 --
 
-CREATE TABLE `tareas` (
+CREATE TABLE `tarea` (
   `idTarea` int(6) NOT NULL,
-  `idUsuario` int(6) NOT NULL,
+  `idUsuario` int(6) DEFAULT NULL,
   `idEdificio` int(6) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
-  `fecha` date NOT NULL,
-  `hora` time NOT NULL
+  `descripcionTarea` varchar(200) NOT NULL,
+  `fechaTarea` datetime NOT NULL,
+  `estadoTarea` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tarea`
+--
+
+INSERT INTO `tarea` (`idTarea`, `idUsuario`, `idEdificio`, `descripcionTarea`, `fechaTarea`, `estadoTarea`) VALUES
+(1, NULL, 2, 'Limpiar piso 1', '2019-03-27 09:04:00', 0),
+(2, NULL, 2, 'Abrir las puertas y hacer la comida, necesitamos comida rica sana y que nos guste mucho, una pizza o lasaña o cualquier cosa italiana es rico. Algo que sea digno de masterchef que sea bueno, espectacu', '2019-03-28 07:30:00', 0);
 
 -- --------------------------------------------------------
 
@@ -621,18 +637,20 @@ CREATE TABLE `usuario` (
   `ultimaConexion` varchar(30) DEFAULT NULL,
   `idTipo` int(4) NOT NULL DEFAULT '1',
   `telefonoUsuario` varchar(60) DEFAULT NULL,
-  `estadoUsuario` int(2) NOT NULL DEFAULT '0'
+  `estadoUsuario` int(2) NOT NULL DEFAULT '0',
+  `descripcionUsuario` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idUsuario`, `nombre`, `rut`, `password`, `correo`, `idEdificio`, `direccion`, `idComuna`, `idRegion`, `Nacionalidad`, `fotoPerfil`, `fechaNacimiento`, `ultimaConexion`, `idTipo`, `telefonoUsuario`, `estadoUsuario`) VALUES
-(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', '03/20/2019 2:05am', 0, '+56966576370', 1),
-(2, 'Belen Campos', '17798854-5', '160291', 'bp.campos10@gmail.com', NULL, 'Francisco Bilbao 1861', 118, 7, 'Chilena/o', 'assets/img/perfil/17798854-5.jpg', '1991-02-16', NULL, 1, '+56975860021', 1),
-(3, 'Sujeto prueba', '1-1', 'asd', 'prueba@prueba.cl', NULL, 'Santa Rita 699', 12, 11, 'Chilena/o', 'assets/img/perfil/1-1.jpg', '1123-11-12', '03/20/2019 1:56am', 4, '+56975860021', 1),
-(4, 'weon extranjero', '2-2', 'asd', 'extranjero@gmail.com', NULL, 'Santa rita 699', 2, 2, 'Venezolano', 'assets/img/perfil/2-2.jpg', '2322-02-11', NULL, 2, '+56975860021', 0);
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `rut`, `password`, `correo`, `idEdificio`, `direccion`, `idComuna`, `idRegion`, `Nacionalidad`, `fotoPerfil`, `fechaNacimiento`, `ultimaConexion`, `idTipo`, `telefonoUsuario`, `estadoUsuario`, `descripcionUsuario`) VALUES
+(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', '03/26/2019 1:05pm', 0, '+56966576370', 1, NULL),
+(2, 'Belen Campos', '17798854-5', '160291', 'bp.campos10@gmail.com', NULL, 'Francisco Bilbao 1861', 118, 7, 'Chilena/o', 'assets/img/perfil/17798854-5.jpg', '1991-02-16', NULL, 1, '+56975860021', 1, NULL),
+(3, 'Sujeto prueba', '1-1', 'asd', 'prueba@prueba.cl', NULL, 'Santa Rita 699', 12, 11, 'Chilena/o', 'assets/img/perfil/1-1.jpg', '1123-11-12', '03/20/2019 1:56am', 4, '+56975860021', 1, NULL),
+(4, 'weon extranjero', '2-2', 'asd', 'extranjero@gmail.com', NULL, 'Santa rita 699', 2, 2, 'Venezolano', 'assets/img/perfil/2-2.jpg', '2322-02-11', NULL, 2, '+56975860021', 0, NULL),
+(7, 'visita', '1-4', 'qwe', 'visita@gmail.com', NULL, 'Santa rita 699', 1, 1, 'Chilena/o', 'assets/img/perfil/1-4.png', '2018-11-30', '03/20/2019 9:43am', 5, '+56975860021', 1, 'Vengo a visitar');
 
 --
 -- Índices para tablas volcadas
@@ -681,9 +699,9 @@ ALTER TABLE `region`
   ADD PRIMARY KEY (`idRegion`);
 
 --
--- Indices de la tabla `tareas`
+-- Indices de la tabla `tarea`
 --
-ALTER TABLE `tareas`
+ALTER TABLE `tarea`
   ADD PRIMARY KEY (`idTarea`);
 
 --
@@ -706,7 +724,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alarma`
 --
 ALTER TABLE `alarma`
-  MODIFY `idAlarma` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlarma` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `comuna`
@@ -724,7 +742,7 @@ ALTER TABLE `comunidad`
 -- AUTO_INCREMENT de la tabla `edificio`
 --
 ALTER TABLE `edificio`
-  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
@@ -745,10 +763,10 @@ ALTER TABLE `region`
   MODIFY `idRegion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de la tabla `tareas`
+-- AUTO_INCREMENT de la tabla `tarea`
 --
-ALTER TABLE `tareas`
-  MODIFY `idTarea` int(6) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tarea`
+  MODIFY `idTarea` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tipousuario`
@@ -760,7 +778,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

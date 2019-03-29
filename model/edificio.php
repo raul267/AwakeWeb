@@ -29,6 +29,12 @@ class edificio
      $sql->execute();
      return $sql->fetchAll(PDO::FETCH_OBJ);
    }
+   public function ListarEdificiosComunidad($id)
+   {
+     $sql = $this->conn->prepare("SELECT * FROM edificio e join comunidad c using(idComunidad) where idComunidad =?");
+     $sql->execute(array($id));
+     return $sql->fetchAll(PDO::FETCH_OBJ);
+   }
 }
 
  ?>

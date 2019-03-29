@@ -16,6 +16,7 @@
     public $ultimaConexion;
     public $idTipo;
     public $telefonoUsuario;
+    public $descripcionUsuario;
 
     public function __CONSTRUCT()
      {
@@ -31,14 +32,14 @@
 
      public function Insertar($us)
      {
-       $sql = $this->conn->prepare("INSERT INTO usuario (nombre,rut,password,correo,idEdificio,direccion,idComuna,idRegion,nacionalidad,fotoPerfil,fechaNacimiento,ultimaConexion,idTipo,telefonoUsuario) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-       $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->ultimaConexion,$us->idTipo,$us->telefonoUsuario));
+       $sql = $this->conn->prepare("INSERT INTO usuario (nombre,rut,password,correo,idEdificio,direccion,idComuna,idRegion,nacionalidad,fotoPerfil,fechaNacimiento,ultimaConexion,idTipo,telefonoUsuario,estadoUsuario,descripcionUsuario) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+       $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->ultimaConexion,$us->idTipo,$us->telefonoUsuario,$us->estadoUsuario,$us->descripcionUsuario));
      }
 
      public function InsertarNuevoUsuario($us,$id)
      {
-      $sql = $this->conn->prepare("UPDATE `usuario` SET`nombre`=?,`rut`=?,`password`=?,`correo`=?,`idEdificio`=?,`direccion`=?,`idComuna`=?,`idRegion`=?,`Nacionalidad`=?,`fotoPerfil`=?,`fechaNacimiento`=?,`telefonoUsuario`=?,`estadoUsuario` =? WHERE idUsuario = ?");
-      $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->telefonoUsuario,$us->estadoUsuario,$id));
+      $sql = $this->conn->prepare("UPDATE `usuario` SET`nombre`=?,`rut`=?,`password`=?,`correo`=?,`idEdificio`=?,`direccion`=?,`idComuna`=?,`idRegion`=?,`Nacionalidad`=?,`fotoPerfil`=?,`fechaNacimiento`=?,`telefonoUsuario`=?,`estadoUsuario` =?, `descripcionUsuario` =?WHERE idUsuario = ?");
+      $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->telefonoUsuario,$us->estadoUsuario,$id, $us->descripcionUsuario));
      }
 
      public function listar()

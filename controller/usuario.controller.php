@@ -6,6 +6,8 @@ require_once 'model/region.php';
 require_once 'model/tipo.php';
 require_once 'model/comunidad.php';
 require_once 'model/edificio.php';
+require_once 'model/alarma.php';
+require_once 'model/tarea.php';
 session_start();
 class UsuarioController
 {
@@ -16,7 +18,8 @@ class UsuarioController
   private $model_ti;
   private $model_com;
   private $model_edi;
-
+  private $model_al;
+  private $model_ta;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -26,7 +29,10 @@ class UsuarioController
      $this->model_ti = new Tipousuario();
      $this->model_com = new Comunidad();
      $this->model_edi = new Edificio();
+     $this->model_al = new Alarma();
+     $this->model_ta = new Tarea();
    }
+
 
 //------------------------------------- Metodos de navegacion
    public function Index()
@@ -128,6 +134,61 @@ class UsuarioController
       require_once 'view/footer.php';
     }
 
+    public function EdificiosPorComunidad()
+    {
+      $e = new Edificio();
+
+      require_once 'view/header.php';
+      require_once 'view/listarEdificiosComunidad.php';
+      require_once 'view/footer.php';
+    }
+
+    public function Alarmas()
+    {
+      $a = new Alarma();
+
+      require_once 'view/header.php';
+      require_once 'view/listarAlarmas.php';
+      require_once 'view/footer.php';
+    }
+
+    public function AgregarAlarma()
+    {
+      $a = new Alarma();
+      $c = new Comunidad();
+
+      require_once 'view/header.php';
+      require_once 'view/agregarAlarma.php';
+      require_once 'view/footer.php';
+    }
+
+    public function Tareas()
+    {
+        $t = new Tarea();
+
+        require_once 'view/header.php';
+        require_once 'view/listarTareas.php';
+        require_once 'view/footer.php';
+    }
+
+    public function IngresarTareas()
+    {
+        $t = new Tarea();
+        $e = new Edificio();
+
+        require_once 'view/header.php';
+        require_once 'view/agregarTarea.php';
+        require_once 'view/footer.php';
+    }
+
+    public function AsignarConserje()
+    {
+      $c = new Comunidad();
+      $co = new Conserje();
+      require_once 'view/header.php';
+      require_once 'view/asignarConserje.php';
+      require_once 'view/footer.php';
+    }
     //------------------------------------Metodos
 
     public function RegistrarUsuarios()
@@ -157,6 +218,8 @@ class UsuarioController
         $u->fotoPerfil = $ruta;
         $u->fechaNacimiento = $_REQUEST['fechaNacimiento'];
         $u->idTipo = $_REQUEST['idTipo'];
+        $u->descripcionUsuario = $_REQUEST['descripcionUsuario'];
+        $u->estadoUsuario = 1;
 
          //Insertarlos en la base de datos
          $this->model_us->Insertar($u);
@@ -190,6 +253,7 @@ class UsuarioController
         $u->fotoPerfil = $ruta;
         $u->fechaNacimiento = $_REQUEST['fechaNacimiento'];
         $u->estadoUsuario = 1;
+        $u->descripcionUsuario = $_REQUEST['descripcionUsuario'];
 
          //Insertarlos en la base de datos
          $this->model_us->InsertarNuevoUsuario($u,$_SESSION['id']);
@@ -302,6 +366,29 @@ class UsuarioController
           $randomString .= $characters[rand(0, $charactersLength - 1)];
       }
       return $randomString;
+    }
+
+    public function IngresarAlarma()
+    {
+      $a = new Alarma();
+      $a->idComunidad = $_REQUEST['idComunidad'];
+      $a->fechaAlarma = $_REQUEST['fechaAlarma'];
+
+      $this->model_al->Insertar($a);
+      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Alarmas"; </script>';
+    }
+
+
+    public function RegistrarTareas()
+    {
+      $t = new Tarea();
+
+      $t->idEdificio = $_REQUEST['idEdificio'];
+      $t->fechaTarea = $_REQUEST['fechaTarea'];
+      $t->descripcionTarea = $_REQUEST['descripcionTarea'];
+
+      $this->model_ta->Insertar($t);
+      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Tareas"; </script>';
     }
 }
  ?>

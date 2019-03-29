@@ -88,6 +88,11 @@
 						<span class="focus-input100" data-placeholder="Confirme la contraseña"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa una descripcion">
+						<textarea style="resize:none;" name="descripcionUsuario" id="descripcionUsuario" class="input100" rows="20" cols="80" ></textarea>
+						<span class="focus-input100" data-placeholder="Ingresa una descripcion"></span>
+					</div>
+
 					<div class="container-login100-form-btn">
 						<input type="submit" class="login100-form-btn" value="Registrar">
 					</div>

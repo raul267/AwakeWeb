@@ -9,7 +9,7 @@
                             <div class="sparkline8-list shadow-reset">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Comunidades</h1>
+                                        <h1>Alarmas</h1>
                                         <div class="sparkline8-outline-icon">
                                             <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                             <span><i class="fa fa-wrench"></i></span>
@@ -30,41 +30,31 @@
                                             <thead>
                                                 <tr>
                                                     <th data-field="state" data-checkbox="true"></th>
-                                                    <th data-field="Nombre" data-editable="true">Nombre</th>
-                                                    <th data-field="Direccion" data-editable="true">Direccion</th>
-                                                    <th data-field="Administrador" data-editable="true">Administrador</th>
-                                                    <th data-field="Numero Administrador" data-editable="true">Numero admin</th>
-                                                    <th data-field="Contactar Administrador" data-editable="true">Contactar admin</th>
-                                                    <th data-field="Conserjes" data-editable="true">Conserjes</th>
-                                                    <th data-field="Ver edificios" data-editable="true">Ver edificios</th>
+                                                    <th data-field="Estado" data-editable="true">Estado</th>
+                                                    <th data-field="Comunidad" data-editable="true">Comunidad</th>
+                                                    <th data-field="Fecha-hora" data-editable="true">Fecha-hora</th>
+                                                    <th data-field="Tiempo respuesta" data-editable="true">Tiempo respuesta</th>
+                                                    <th data-field="Conserje" data-editable="true">Coserje</th>
                                                     <th data-field="Editar" data-editable="true">Editar</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                              <?php foreach ($a->listar() as $row): ?>
                                                 <tr>
-                                                    <?php foreach ($co->listar() as $row): ?>
-                                                      <td></td>
-                                                      <td><?php echo $row->nombreComunidad ?></td>
-                                                      <td><?php echo $row->direccionComunidad ?></td>
-                                                      <td><?php echo $row->nombre ?></td>
-                                                      <td><?php echo $row->telefonoUsuario ?></td>
-                                                      <td class="centrado"><a href="#"><span class="glyphicon glyphicon-envelope"></span></a></td>
-                                                      <td><div class="support-list-img">
-                                                          <a href="#"><img src="assets/img/notification/1.jpg" alt="" />
-                                                          </a>
-                                                          <a href="#"><img src="assets/img/notification/2.jpg" alt="" />
-                                                          </a>
-                                                          <a href="#"><img src="assets/img/notification/3.jpg" alt="" />
-                                                          </a>
-                                                          <a href="#"><img src="assets/img/notification/4.jpg" alt="" />
-                                                          </a>
-                                                      </div></td>
-                                                      <td class="centrado"><a href="?c=Usuario&a=EdificiosPorComunidad&id=<?php echo $row->idComunidad ?>"<span class="glyphicon glyphicon-eye-open"></span></a></td>
-                                                      <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
-                                                  </tr>
-                                                    <?php endforeach; ?>
-
-
+                                                  <td></td>
+                                                  <td><?php if ($row->estadoAlarma==0): ?>
+                                                    <input type="button" class="estadoDanger"name="" value="">
+                                                  <?php endif;  if ($row->estadoAlarma==1): ?>
+                                                    <input type="button" class="estadoSuccess"name="" value="">
+                                                  <?php endif; ?>
+                                                </td>
+                                                <td><?php echo $row->nombreComunidad ?></td>
+                                                <td><?php echo $row->fechaAlarma ?></td>
+                                                <td><?php echo $row->tiempoAlarma ?></td>
+                                                <td><?php echo $row->nombre ?></td>
+                                                <td class="centrado"><a href="#"<span class="glyphicon glyphicon-pencil"></span></a></td>
+                                                </tr>
+                                              <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </div>
