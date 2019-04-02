@@ -77,17 +77,23 @@
                     </a>
                     <h3><?php echo $_SESSION['nombre'] ?></h3>
                     <p>Ultima coneccion: <br> <?php echo $_SESSION['ultimaConexion'] ?></p>
-                    <strong>AP+</strong>
+                    <strong></strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
-                            <a href="#" role="button" ><i class="fa big-icon fa-home"></i> <span class="mini-dn">Inicio</span> <span class=><i class=""></i></span></a>
+                            <a href="?c=Usuario&a=Dashboard" role="button" ><i class="fa big-icon fa-home"></i> <span class="mini-dn">Inicio</span> <span class=><i class=""></i></span></a>
                         </li>
-                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Mensajes</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Calificaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="inbox.html" class="dropdown-item">Bandeja de entrada</a>
-                                <a href="view-mail.html" class="dropdown-item">Escribir correo</a>
+                                <a href="view-mail.html" class="dropdown-item">Asignar porcentajes</a>
+                                <a href="inbox.html" class="dropdown-item">Ver calificaiones</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Comunicaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="?c=Usuario&a=AgregarComunicacion" class="dropdown-item">Escribir comunicacion</a>
+                                <a href="inbox.html" class="dropdown-item">Ver comunicaciones</a>
                             </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-plus"></i> <span class="mini-dn">Agregar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
@@ -104,6 +110,7 @@
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-eye"></i> <span class="mini-dn">Listar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="?c=Usuario&a=Usuarios" class="dropdown-item">Usuarios</a>
+                                <a href="?c=Usuario&a=ListarConserjes" class="dropdown-item">Conserjes</a>
                                 <a href="?c=Usuario&a=Comunidades" class="dropdown-item">Comunidades</a>
                                 <a href="?c=Usuario&a=Alarmas" class="dropdown-item">Alarmas</a>
                                 <a href="?c=Usuario&a=Edificios" class="dropdown-item">Edificios</a>

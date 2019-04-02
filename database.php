@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-03-2019 a las 14:16:44
+-- Tiempo de generación: 02-04-2019 a las 21:56:12
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 7.3.2
 
@@ -42,7 +42,8 @@ CREATE TABLE `alarma` (
 --
 
 INSERT INTO `alarma` (`idAlarma`, `idComunidad`, `fechaAlarma`, `tiempoAlarma`, `estadoAlarma`, `idUsuario`) VALUES
-(1, 1, '2019-03-25 03:45:00', NULL, 0, NULL);
+(1, 1, '2019-03-25 03:45:00', NULL, 0, NULL),
+(2, 3, '2018-12-05 09:05:00', NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -415,7 +416,8 @@ INSERT INTO `comuna` (`idComuna`, `nombreComuna`, `idProvincia`) VALUES
 
 CREATE TABLE `comunicaciones` (
   `idComunicacion` int(11) NOT NULL,
-  `descripcionComunicacion` text NOT NULL
+  `descripcionComunicacion` text NOT NULL,
+  `idEdificio` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -439,7 +441,8 @@ CREATE TABLE `comunidad` (
 
 INSERT INTO `comunidad` (`idComunidad`, `idAdmin`, `nombreComunidad`, `direccionComunidad`, `idRegion`, `idComuna`) VALUES
 (1, 1, 'Inez de Suarez', 'Francisco Bilbao 1861', 0, 0),
-(2, 2, 'Comunidad  Triste', 'Alcantara 192', 7, 109);
+(2, 2, 'Comunidad  Triste', 'Alcantara 192', 7, 109),
+(3, 2, 'Comunidad  Mas triste', 'Hace hambree mucha', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -459,7 +462,8 @@ CREATE TABLE `edificio` (
 
 INSERT INTO `edificio` (`idEdificio`, `idComunidad`, `direccionEdificio`) VALUES
 (1, 1, 'Tengo sueño 75'),
-(2, 1, 'Francisco bilbao 1861');
+(2, 1, 'Francisco bilbao 1861'),
+(3, 3, 'sdasdsa 87');
 
 -- --------------------------------------------------------
 
@@ -601,7 +605,8 @@ CREATE TABLE `tarea` (
 
 INSERT INTO `tarea` (`idTarea`, `idUsuario`, `idEdificio`, `descripcionTarea`, `fechaTarea`, `estadoTarea`) VALUES
 (1, NULL, 2, 'Limpiar piso 1', '2019-03-27 09:04:00', 1),
-(2, NULL, 2, 'Abrir las puertas y hacer la comida, necesitamos comida rica sana y que nos guste mucho, una pizza o lasaña o cualquier cosa italiana es rico. Algo que sea digno de masterchef que sea bueno, espectacu', '2019-03-28 07:30:00', 0);
+(2, NULL, 2, 'Abrir las puertas y hacer la comida, necesitamos comida rica sana y que nos guste mucho, una pizza o lasaña o cualquier cosa italiana es rico. Algo que sea digno de masterchef que sea bueno, espectacu', '2019-03-28 07:30:00', 0),
+(3, NULL, 3, 'Limpiar todo denuevo ', '2019-03-29 15:33:00', 0);
 
 -- --------------------------------------------------------
 
@@ -669,11 +674,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `rut`, `password`, `correo`, `idEdificio`, `direccion`, `idComuna`, `idRegion`, `Nacionalidad`, `fotoPerfil`, `fechaNacimiento`, `ultimaConexion`, `idTipo`, `telefonoUsuario`, `estadoUsuario`, `descripcionUsuario`) VALUES
-(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', '03/29/2019 9:42am', 0, '+56966576370', 1, NULL),
+(1, 'Raul Strappa', '18935801-6', '941512', 'raul.strappa94@gmail.com', NULL, 'Santa Rita 699', 109, 7, 'Chilena/o', 'assets/img/perfil/18935801-6.jpg', '1994-12-15', '04/02/2019 12:44pm', 0, '+56966576370', 1, NULL),
 (2, 'Belen Campos', '17798854-5', '160291', 'bp.campos10@gmail.com', NULL, 'Francisco Bilbao 1861', 118, 7, 'Chilena/o', 'assets/img/perfil/17798854-5.jpg', '1991-02-16', NULL, 1, '+56975860021', 1, NULL),
 (3, 'Sujeto prueba', '1-1', 'asd', 'prueba@prueba.cl', NULL, 'Santa Rita 699', 12, 11, 'Chilena/o', 'assets/img/perfil/1-1.jpg', '1123-11-12', '03/20/2019 1:56am', 4, '+56975860021', 1, NULL),
-(4, 'weon extranjero', '2-2', 'asd', 'extranjero@gmail.com', 2, 'Santa rita 699', 2, 2, 'Venezolano', 'assets/img/perfil/2-2.jpg', '2322-02-11', NULL, 2, '+56975860021', 0, NULL),
-(7, 'visita', '1-4', 'qwe', 'visita@gmail.com', NULL, 'Santa rita 699', 1, 1, 'Chilena/o', 'assets/img/perfil/1-4.png', '2018-11-30', '03/20/2019 9:43am', 5, '+56975860021', 1, 'Vengo a visitar');
+(4, 'weon extranjero', '2-2', 'asd', 'extranjero@gmail.com', 3, 'Santa rita 699', 2, 2, 'Venezolano', 'assets/img/perfil/2-2.jpg', '2322-02-11', NULL, 2, '+56975860021', 0, NULL),
+(7, 'visita', '1-4', 'qwe', 'visita@gmail.com', NULL, 'Santa rita 699', 1, 1, 'Chilena/o', 'assets/img/perfil/1-4.png', '2018-11-30', '03/20/2019 9:43am', 5, '+56975860021', 1, 'Vengo a visitar'),
+(8, 'Nuevo usuario', '18232232-6', 'jMcNH21', 'asdsad@asdasd.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 0, NULL),
+(9, 'Tonto tonto', '8612090-9', '612ZvXi', 'adsad@asdsad.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, 0, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -759,7 +766,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `alarma`
 --
 ALTER TABLE `alarma`
-  MODIFY `idAlarma` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAlarma` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `comuna`
@@ -777,13 +784,13 @@ ALTER TABLE `comunicaciones`
 -- AUTO_INCREMENT de la tabla `comunidad`
 --
 ALTER TABLE `comunidad`
-  MODIFY `idComunidad` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idComunidad` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `edificio`
 --
 ALTER TABLE `edificio`
-  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idEdificio` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes`
@@ -807,7 +814,7 @@ ALTER TABLE `region`
 -- AUTO_INCREMENT de la tabla `tarea`
 --
 ALTER TABLE `tarea`
-  MODIFY `idTarea` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idTarea` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipousuario`
@@ -825,7 +832,7 @@ ALTER TABLE `user_comunicaciones`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -27,7 +27,7 @@ class Tarea
 
    public function listar()
    {
-      $sql = $this->conn->prepare("SELECT * FROM TAREA JOIN EDIFICIO using(idEdificio) LEFT JOIN USUARIO USING (idUsuario)");
+      $sql = $this->conn->prepare("SELECT * FROM TAREA JOIN edificio using(idEdificio) LEFT JOIN usuario USING (idUsuario)");
       $sql->execute();
       return $sql->fetchAll(PDO::FETCH_OBJ);
    }

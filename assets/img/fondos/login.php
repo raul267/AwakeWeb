@@ -1,5 +1,5 @@
 
-<body  style="background-image: url('assets/img/fondos/login.jpg');">
+<body  style="background-image: url('assets/img/fondos/login.JPG');">
 
 	<div class="limiter">
 		<div class="container-login100">

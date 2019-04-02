@@ -42,10 +42,10 @@
        $sql->execute(array($u->nombre,$u->rut,$u->password,$u->correo,$u->idTipo));
      }
 
-     public function InsertarNuevoUsuario($us)
+     public function InsertarNuevoUsuario($us,$id)
      {
-      $sql = $this->conn->prepare("UPDATE `usuario` SET`nombre`=?,`rut`=?,`password`=?,`correo`=?,`idEdificio`=?,`direccion`=?,`idComuna`=?,`idRegion`=?,`Nacionalidad`=?,`fotoPerfil`=?,`fechaNacimiento`=?,`telefonoUsuario`=?,`estadoUsuario` =?, `descripcionUsuario` =? WHERE idUsuario = ?");
-      $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->telefonoUsuario,$us->estadoUsuario,$id, $us->descripcionUsuario,$us->idUsuario));
+      $sql = $this->conn->prepare("UPDATE `usuario` SET`nombre`=?,`rut`=?,`password`=?,`correo`=?,`idEdificio`=?,`direccion`=?,`idComuna`=?,`idRegion`=?,`Nacionalidad`=?,`fotoPerfil`=?,`fechaNacimiento`=?,`telefonoUsuario`=?,`estadoUsuario` =?, `descripcionUsuario` =?WHERE idUsuario = ?");
+      $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->telefonoUsuario,$us->estadoUsuario,$id, $us->descripcionUsuario));
      }
 
      public function listar()

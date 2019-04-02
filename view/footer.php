@@ -110,6 +110,9 @@
 <script src="assets/js/data-table/bootstrap-table-export.js"></script>
 <!-- main JS
 ============================================ -->
+<script src="assets/js/c3-charts/d3.min.js"></script>
+<script src="assets/js/c3-charts/c3.min.js"></script>
+<script src="assets/js/c3-charts/c3-active.js"></script>
 <script src="assets/js/main.js"></script>
 
 <script type="text/javascript">

@@ -3,6 +3,13 @@
   text-align: center;
 }
 
+.fotoPerfil
+{
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
 .fotoPerfilChica
 {
   border-radius: 50px;

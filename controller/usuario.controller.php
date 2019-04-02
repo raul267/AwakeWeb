@@ -8,6 +8,7 @@ require_once 'model/comunidad.php';
 require_once 'model/edificio.php';
 require_once 'model/alarma.php';
 require_once 'model/tarea.php';
+require_once 'model/comunicacion.php';
 session_start();
 class UsuarioController
 {
@@ -20,6 +21,7 @@ class UsuarioController
   private $model_edi;
   private $model_al;
   private $model_ta;
+  private $model_comunicacion;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -31,6 +33,7 @@ class UsuarioController
      $this->model_edi = new Edificio();
      $this->model_al = new Alarma();
      $this->model_ta = new Tarea();
+     $this->$model_comunicacion = new comunicacion();
    }
 
 
@@ -189,6 +192,39 @@ class UsuarioController
       require_once 'view/asignarConserje.php';
       require_once 'view/footer.php';
     }
+
+    public function ListarConserjes()
+    {
+      $c = new Edificio();
+      $u = new Usuario();
+      require_once 'view/header.php';
+      require_once 'view/listarConserjes.php';
+      require_once 'view/footer.php';
+    }
+
+    public function AgregarComunicacion()
+    {
+      $e = new Edificio();
+      require_once 'view/header.php';
+      require_once 'view/agregarComunicacion.php';
+      require_once 'view/footer.php';
+    }
+
+    public function ListarComunicaciones()
+    {
+      require_once 'view/header.php';
+      require_once 'view/listarConserjes.php';
+      require_once 'view/footer.php';
+    }
+
+    public function Perfil()
+    {
+      $u = new Usuario();
+      $u = $this->model_us->listarID($_REQUEST['id']);
+      require_once 'view/header.php';
+      require_once 'view/perfil.php';
+      require_once 'view/footer.php';
+    }
     //------------------------------------Metodos
 
     public function RegistrarUsuarios()
@@ -254,9 +290,9 @@ class UsuarioController
         $u->fechaNacimiento = $_REQUEST['fechaNacimiento'];
         $u->estadoUsuario = 1;
         $u->descripcionUsuario = $_REQUEST['descripcionUsuario'];
-
+        $u->idUsuario = $_SESSION['id'];
          //Insertarlos en la base de datos
-         $this->model_us->InsertarNuevoUsuario($u,$_SESSION['id']);
+         $this->model_us->InsertarNuevoUsuario($u);
 
          //redireccionar a otra pagina mostrando un mensaje de exito
         echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Index";</script>';
@@ -281,7 +317,7 @@ class UsuarioController
       }
       $u->password = $randomString;
 
-      $this->model_us->Insertar($u);
+      $this->model_us->InsertarUsuario($u);
       echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Usuarios";</script>';
     }
 
@@ -398,8 +434,15 @@ class UsuarioController
 
       $this->model_us->AsignarConserje($edificio,$usuario);
       echo '<script language="javascript">alert("Exito al Asignar Conserje"); window.location.href="index.php?c=Usuario&a=Tareas"; </script>';
+    }
 
+    public function IngresarComunicacion()
+    {
 
+      $descripcion = $_REQUEST['descripcionTarea'];
+      $idEdificio = $_REQUEST['idEdificio'];
+
+      $this->$model_comunicacion->Insertar();
     }
 }
  ?>
