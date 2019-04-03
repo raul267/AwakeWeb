@@ -8,7 +8,7 @@ require_once 'model/comunidad.php';
 require_once 'model/edificio.php';
 require_once 'model/alarma.php';
 require_once 'model/tarea.php';
-require_once 'model/comunicacion.php';
+require_once 'model/comunicaciones.php';
 session_start();
 class UsuarioController
 {
@@ -33,7 +33,7 @@ class UsuarioController
      $this->model_edi = new Edificio();
      $this->model_al = new Alarma();
      $this->model_ta = new Tarea();
-     $this->$model_comunicacion = new comunicacion();
+     $this->model_comunicacion = new Comunicaciones();
    }
 
 
@@ -212,8 +212,9 @@ class UsuarioController
 
     public function ListarComunicaciones()
     {
+      $c = new Comunicaciones();
       require_once 'view/header.php';
-      require_once 'view/listarConserjes.php';
+      require_once 'view/listarComunicaciones.php';
       require_once 'view/footer.php';
     }
 
@@ -438,11 +439,23 @@ class UsuarioController
 
     public function IngresarComunicacion()
     {
+      date_default_timezone_set('America/Santiago');
 
-      $descripcion = $_REQUEST['descripcionTarea'];
-      $idEdificio = $_REQUEST['idEdificio'];
+       $descripcion = $_REQUEST['descripcionTarea'];
+       $idEdificio = $_REQUEST['idEdificio'];
+       $fechaEnviado = date('m/d/Y g:ia');
 
-      $this->$model_comunicacion->Insertar();
+      $this->model_comunicacion->Insertar($descripcion,$idEdificio,$fechaEnviado);
+      echo '<script language="javascript">alert("Comunicacion enviada exitosamente"); window.location.href="index.php?c=Usuario&a=ListarComunicaciones"; </script>';
+
+    }
+
+    public function EliminarComunicacion()
+    {
+      $id = $_REQUEST['id'];
+      $this->model_comunicacion->Delete($id);
+
+      echo '<script language="javascript">alert("Se elimino  la comunicacion"); window.location.href="index.php?c=Usuario&a=ListarComunicaciones"; </script>';
     }
 }
  ?>

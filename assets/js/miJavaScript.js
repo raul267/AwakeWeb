@@ -66,3 +66,23 @@ function checkRut(rut)
   },10);
 
 }
+
+function contarcaracteres2(){
+
+var total=500;
+
+setTimeout(function(){
+var valor=document.getElementById('descripcionTarea');
+var respuesta=document.getElementById('cantidad');
+var cantidad=valor.value.length;
+document.getElementById('cantidad').innerHTML = (total - cantidad) + ' caracteres';
+if(cantidad>total){
+  respuesta.style.color = "red";
+
+}
+else {
+  respuesta.style.color = "black";
+}
+},10);
+
+}
