@@ -123,6 +123,55 @@ $(document).ready(function() {
 </script>
 
 <script src="assets/js/miJavaScript.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var total = 0;
+  $("#porcTareas").keyup(function(){
+      var alarmas = parseInt(document.getElementById("porcAlarmas").value);
+      var tareas = parseInt(document.getElementById("porcTareas").value);
+      var usuarios = parseInt(document.getElementById("porcUsuario").value);
+      var recorrido =parseInt( document.getElementById("porcRecorrido").value);
+      total = alarmas+tareas+usuarios+recorrido;
+      if (total > 100)
+      {
+        alert("La suma de las ponderaciones no puede ser mayor a 100")
+      }
+  });
+  $("#porcAlarmas").keyup(function(){
+    var alarmas = parseInt(document.getElementById("porcAlarmas").value);
+    var tareas = parseInt(document.getElementById("porcTareas").value);
+    var usuarios = parseInt(document.getElementById("porcUsuario").value);
+    var recorrido =parseInt( document.getElementById("porcRecorrido").value);
+    total = alarmas+tareas+usuarios+recorrido;
+    if (total > 100)
+    {
+      alert("La suma de las ponderaciones no puede ser mayor a 100")
+    }
+  });
+  $("#porcUsuario").keyup(function(){
+    var alarmas = parseInt(document.getElementById("porcAlarmas").value);
+    var tareas = parseInt(document.getElementById("porcTareas").value);
+    var usuarios = parseInt(document.getElementById("porcUsuario").value);
+    var recorrido =parseInt( document.getElementById("porcRecorrido").value);
+    total = alarmas+tareas+usuarios+recorrido;
+    if (total > 100)
+    {
+      alert("La suma de las ponderaciones no puede ser mayor a 100")
+    }
+  });
+  $("#porcRecorrido").keyup(function(){
+    var alarmas = parseInt(document.getElementById("porcAlarmas").value);
+    var tareas = parseInt(document.getElementById("porcTareas").value);
+    var usuarios = parseInt(document.getElementById("porcUsuario").value);
+    var recorrido =parseInt( document.getElementById("porcRecorrido").value);
+    total = alarmas+tareas+usuarios+recorrido;
+    if (total > 100)
+    {
+      alert("La suma de las ponderaciones no puede ser mayor a 100")
+    }
+  });
+
+
+</script>
 
 </body>
 

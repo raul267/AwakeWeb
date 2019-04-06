@@ -9,6 +9,7 @@ require_once 'model/edificio.php';
 require_once 'model/alarma.php';
 require_once 'model/tarea.php';
 require_once 'model/comunicaciones.php';
+require_once 'model/porcalificaciones.php';
 session_start();
 class UsuarioController
 {
@@ -22,6 +23,7 @@ class UsuarioController
   private $model_al;
   private $model_ta;
   private $model_comunicacion;
+  private $model_porc;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -34,6 +36,7 @@ class UsuarioController
      $this->model_al = new Alarma();
      $this->model_ta = new Tarea();
      $this->model_comunicacion = new Comunicaciones();
+     $this->model_porc = new PorCalificaciones();
    }
 
 
@@ -226,6 +229,23 @@ class UsuarioController
       require_once 'view/perfil.php';
       require_once 'view/footer.php';
     }
+
+    public function AsignarPorcentajes()
+    {
+      $p = new PorCalificaciones();
+      $p = $this->model_porc->listarID($_REQUEST['id']);
+      require_once 'view/header.php';
+      require_once 'view/asignarPorcentajes.php';
+      require_once 'view/footer.php';
+    }
+
+    public function VerPorcentajes()
+    {
+      $p = new PorCalificaciones();
+      require_once 'view/header.php';
+      require_once 'view/listarPorcentajes.php';
+      require_once 'view/footer.php';
+    }
     //------------------------------------Metodos
 
     public function RegistrarUsuarios()
@@ -289,6 +309,8 @@ class UsuarioController
        move_uploaded_file($archivo, $ruta);
         $u->fotoPerfil = $ruta;
         $u->fechaNacimiento = $_REQUEST['fechaNacimiento'];
+        $u->ultimaConexion = $_SESSION['ultimaConexion'];
+        $u->idTipo = $_SESSION['idTipo'];
         $u->estadoUsuario = 1;
         $u->descripcionUsuario = $_REQUEST['descripcionUsuario'];
         $u->idUsuario = $_SESSION['id'];
@@ -341,12 +363,19 @@ class UsuarioController
     public function RegistrarEdificio()
     {
       $e = new Edificio();
+      $p = new PorCalificaciones();
 
       $e->idComunidad = $_REQUEST['idComunidad'];
       $e->direccionEdificio = $_REQUEST['direccionEdificio'];
 
       $this->model_edi->Insertar($e);
-        echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
+
+      $idEdificio = $this->model_edi->ListarUltimoEdificio();
+      $idEdificio->idEdificio;
+
+
+     $this->model_porc->Insertar($idEdificio->idEdificio);
+      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
     }
 
     public function Ingresar()
@@ -361,7 +390,7 @@ class UsuarioController
       {
         $_SESSION['nombre'] = $u->nombre;
         $_SESSION['id'] = $u->idUsuario;
-        $_SESSION['tipoUsuario'] = $u->tipoUsuario;
+        $_SESSION['idTipo'] = $u->idTipo;
         $_SESSION['ultimaConexion'] = $u->ultimaConexion;
         $_SESSION['fotoPerfil'] = $u->fotoPerfil;
         $this->model_us->ActualizarConeccion($ultimaConexion,$u->idUsuario);
@@ -374,7 +403,10 @@ class UsuarioController
         $_SESSION['nombre'] = $u->nombre;
         $_SESSION['id'] = $u->idUsuario;
         $_SESSION['rut'] = $u->rut;
+        $_SESSION['id'] = $u->idUsuario;
         $_SESSION['correo'] = $u->correo;
+        $_SESSION['idTipo'] = $u->idTipo;
+        $_SESSION['ultimaConexion'] = $u->ultimaConexion;
         header('Location: ?c=Usuario&a=Registrar2');
 
       }
@@ -447,6 +479,21 @@ class UsuarioController
 
       $this->model_comunicacion->Insertar($descripcion,$idEdificio,$fechaEnviado);
       echo '<script language="javascript">alert("Comunicacion enviada exitosamente"); window.location.href="index.php?c=Usuario&a=ListarComunicaciones"; </script>';
+
+    }
+
+    public function CambiarPorcentajes()
+    {
+      $p = new PorCalificaciones();
+
+     $p->porcTareas = $_REQUEST['porcTareas'];
+     $p->porcAlarmas = $_REQUEST['porcAlarmas'];
+     $p->porcUsuarios = $_REQUEST['porcUsuarios'];
+     $p->porcRecorrido = $_REQUEST['porcRecorrido'];
+     $p->idEdificio = $_REQUEST['idEdificio'];
+
+      $this->model_porc->Actualizar($p);
+      echo '<script language="javascript">alert("Porcentajes cambiados correctamente"); window.location.href="index.php?c=Usuario&a=VerPorcentajes"; </script>';
 
     }
 

@@ -1,6 +1,6 @@
 (function ($) {
  "use strict";
-  
+
 
             c3.generate({
                 bindto: '#lineChart',
@@ -74,7 +74,7 @@
                 bindto: '#gauge',
                 data:{
                     columns: [
-                        ['data', 91.4]
+                        ['data', 40]
                     ],
 
                     type: 'gauge'
@@ -102,4 +102,4 @@
 
 
 
-})(jQuery); 
+})(jQuery);

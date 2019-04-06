@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <!-- Google Fonts
 		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">-->
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -107,7 +107,7 @@
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-star"></i> <span class="mini-dn">Calificaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
-                                <a href="view-mail.html" class="dropdown-item">Asignar porcentajes</a>
+                                <a href="?c=Usuario&a=VerPorcentajes" class="dropdown-item">Ver porcentajes</a>
                                 <a href="inbox.html" class="dropdown-item">Ver calificaiones</a>
                             </div>
                         </li>

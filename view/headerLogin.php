@@ -25,6 +25,6 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assetsLogin/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assetsLogin/css/main.css">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
 <!--===============================================================================================-->
 </head>

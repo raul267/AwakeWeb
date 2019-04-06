@@ -1,0 +1,103 @@
+[29-Mar-2019 10:56:08 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.TAREA' doesn't exist' in /home/tecnoactive/public_html/awake/model/tarea.php:31
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/tarea.php(31): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarTareas.php(39): Tarea->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(170): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Tareas()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/tarea.php on line 31
+[29-Mar-2019 10:57:58 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'estadoUsuario' cannot be null' in /home/tecnoactive/public_html/awake/model/usuario.php:36
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(36): PDOStatement->execute(Array)
+#1 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(308): Usuario->Insertar(Object(Usuario))
+#2 [internal function]: UsuarioController->RegistrarUsuarioNuevo()
+#3 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#4 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 36
+[29-Mar-2019 11:16:37 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'estadoUsuario' cannot be null' in /home/tecnoactive/public_html/awake/model/usuario.php:36
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(36): PDOStatement->execute(Array)
+#1 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(308): Usuario->Insertar(Object(Usuario))
+#2 [internal function]: UsuarioController->RegistrarUsuarioNuevo()
+#3 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#4 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 36
+[29-Mar-2019 11:19:58 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.tipoUsuario' doesn't exist' in /home/tecnoactive/public_html/awake/model/usuario.php:54
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(54): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarUsuarios.php(46): Usuario->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(50): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Usuarios()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 54
+[29-Mar-2019 11:20:11 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.tipoUsuario' doesn't exist' in /home/tecnoactive/public_html/awake/model/usuario.php:54
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(54): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarUsuarios.php(46): Usuario->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(50): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Usuarios()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 54
+[29-Mar-2019 11:22:03 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.TAREA' doesn't exist' in /home/tecnoactive/public_html/awake/model/tarea.php:31
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/tarea.php(31): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarTareas.php(39): Tarea->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(170): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Tareas()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/tarea.php on line 31
+[29-Mar-2019 11:39:02 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home/tecnoactive/public_html/awake/model/usuario.php:48
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(48): PDOStatement->execute(Array)
+#1 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(283): Usuario->InsertarNuevoUsuario(Object(Usuario), '8')
+#2 [internal function]: UsuarioController->RegistrarUsuarios2()
+#3 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#4 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 48
+[06-Apr-2019 00:53:44 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:53:44 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:54:46 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:54:46 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:54:54 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:54:54 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:55:09 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:55:09 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:37 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:37 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:41 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:41 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:42 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:42 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:42 America/Santiago] PHP Warning:  require_once(model/porcalificaciones.php): failed to open stream: No such file or directory in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 00:56:42 America/Santiago] PHP Fatal error:  require_once(): Failed opening required 'model/porcalificaciones.php' (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/tecnoactive/public_html/awake/controller/usuario.controller.php on line 12
+[06-Apr-2019 01:01:26 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.tipoUsuario' doesn't exist' in /home/tecnoactive/public_html/awake/model/usuario.php:54
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(54): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarUsuarios.php(46): Usuario->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(56): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Usuarios()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 54
+[06-Apr-2019 01:01:34 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.tipoUsuario' doesn't exist' in /home/tecnoactive/public_html/awake/model/usuario.php:54
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(54): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarUsuarios.php(46): Usuario->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(56): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Usuarios()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 54
+[06-Apr-2019 01:02:31 America/Santiago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tecnoact_awake.tipoUsuario' doesn't exist' in /home/tecnoactive/public_html/awake/model/usuario.php:54
+Stack trace:
+#0 /home/tecnoactive/public_html/awake/model/usuario.php(54): PDOStatement->execute()
+#1 /home/tecnoactive/public_html/awake/view/listarUsuarios.php(46): Usuario->listar()
+#2 /home/tecnoactive/public_html/awake/controller/usuario.controller.php(56): require_once('/home/tecnoacti...')
+#3 [internal function]: UsuarioController->Usuarios()
+#4 /home/tecnoactive/public_html/awake/index.php(29): call_user_func(Array)
+#5 {main}
+  thrown in /home/tecnoactive/public_html/awake/model/usuario.php on line 54
