@@ -31,7 +31,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="porcAlarmas" id="porcAlarmas" value="<?php echo $p->porcAlarmas ?>">
+                                                <input type="text" name="porcAlarmas" id="porcAlarmas" value="<?php echo $p->alarmas ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="porcTareas" id="porcTareas" value="<?php echo $p->porcTareas ?>">
+                                                <input type="text" name="porcTareas" id="porcTareas" value="<?php echo $p->tareas ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="porcRecorrido" id="porcRecorrido" value="<?php echo $p->porcRecorrido ?>">
+                                                <input type="text" name="porcRecorrido" id="porcRecorrido" value="<?php echo $p->recorridos ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="porcUsuarios" id="porcUsuarios" value="<?php echo $p->porcUsuarios ?>">
+                                                <input type="text" name="porcUsuarios" id="porcUsuarios" value="<?php echo $p->usuarios ?>">
                                             </div>
                                         </div>
                                     </div>

@@ -30,6 +30,7 @@
                                             <thead>
                                                 <tr>
                                                     <th data-field="state" data-checkbox="true"></th>
+                                                    <th>Edificio</th>
                                                     <th data-field="Foto perfil" data-editable="true">Foto perfil</th>
                                                     <th data-field="Nombre" data-editable="true">Nombre</th>
                                                     <th data-field="Rut" data-editable="true">Rut</th>
@@ -45,6 +46,7 @@
                                               <?php foreach ($u->ListarConserjes() as $row): ?>
                                                 <tr>
                                                       <td></td>
+                                                      <td><?php echo $row->idEdificio ?></td>
                                                       <td><img class="fotoPerfilChica"src="<?php echo $row->fotoPerfil ?>" alt=""></td>
                                                       <td><?php echo $row->nombre ?></td>
                                                       <td><?php echo $row->rut ?></td>

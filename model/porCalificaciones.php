@@ -40,7 +40,7 @@ class PorCalificaciones
 
    public function listarID($id)
    {
-      $sql = $this->conn->prepare("SELECT * FROM porcalificaciones JOIN edificio using(idEdificio) where idEdificio = ?");
+      $sql = $this->conn->prepare("SELECT idEdificio idEdificio,direccionEdificio direccionEdificio,porcUsuarios usuarios, porcTareas tareas,porcAlarmas alarmas, porcRecorrido recorridos FROM porcalificaciones JOIN edificio using(idEdificio) where idEdificio = ?");
       $sql->execute(array($id));
       return $sql->fetch(PDO::FETCH_OBJ);
    }

@@ -26,22 +26,25 @@
                                     <div class="col-lg-3">
                                         <div class="user-profile-social-list">
                                             <table class="table small m-b-xs">
+                                              <thead>
+                                                <label>Puntajes</label>
+                                              </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>
-                                                            <strong>542</strong> <a href="?c=Usuario&a=Alarmas">Alarmas</a>
+                                                          <a href="?c=Usuario&a=Alarmas">Alarmas:</a> <strong><?php echo $alarmas->alarma ?></strong>
                                                         </td>
                                                         <td>
-                                                            <strong>222</strong> <a href="?c=Usuario&a=Tareas">Tareas</a>
+                                                          <a href="?c=Usuario&a=Tareas">Tareas:</a>  <strong><?php echo $tareas->tarea ?></strong>
                                                         </td>
 
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                          <strong>542</strong> Recorrido Perimetral
+                                                        <a href="#">Recorridos:</a><strong><?php echo $recorridos->recorrido ?></strong>
                                                         </td>
                                                         <td>
-                                                          <strong>612</strong> Calificacion de usuarios
+                                                        <a href="#">Calificacion de usuarios:</a> <strong><?php echo $usuarios->usuario ?></strong>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -58,6 +61,8 @@
                                               </div>
                                               <div class="sparkline11-graph">
                                                   <div id="gauge"></div>
+                                                  <?php $calificacion = (($alarmas->alarma * $porcentajes->alarmas)/100) + (($tareas->tarea * $porcentajes->tareas)/100) + (($recorridos->recorrido * $porcentajes->recorridos)/100) + (($usuarios->usuario * $porcentajes->usuarios)/100); ?>
+                                                  <input type="hidden" name="calificacion" id="calificacion" value="<?php echo $calificacion ?>">
                                               </div>
                                             </div>
                                         </div>
@@ -71,40 +76,44 @@
 
             <div class="user-prfile-activity-area mg-b-40 mg-t-30">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="post-user-profile-awrap shadow-reset">
-                                <div class="user-profile-post">
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                            <div class="user-profile-img-post">
-                                                <a href="#"><img src="<?php echo $_SESSION['fotoPerfil'] ?>" class="fotoPerfil" alt="" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                            <div class="user-profile-post-name">
-                                                <h2><a href="#">Usuario tato</a></h2>
-                                                <p><span>Today 4:21 pm - 12.06.2014</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <div class="row">
+                    <?php foreach ($c->ListarComentarios($_REQUEST['id']) as $row): ?>
 
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <div class="profile-user-post-content">
-                                                <p>Muy buen conserje, contraten mas como el </p>
-                                                <div class="user-post-reply">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                          <div class="col-lg-6" style="margin-botom:5px;">
+                              <div class="post-user-profile-awrap shadow-reset">
+                                  <div class="user-profile-post">
+                                      <div class="row">
+                                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                              <div class="user-profile-img-post">
+                                                  <a href="#"><img src="<?php echo $row->fotoPerfil?>" class="fotoPerfil" alt="" />
+                                                  </a>
+                                              </div>
+                                          </div>
+                                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                              <div class="user-profile-post-name">
+                                                  <h2><a href="#"><?php echo $row->nombre ?></a></h2>
+                                                  <p><span><?php echo $row->fechaCalificacion ?></span>
+                                                  </p>
+                                              </div>
+                                          </div>
+                                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+                                          </div>
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                              <div class="profile-user-post-content">
+                                                  <p><?php echo $row->comentarioCalificacion ?></p>
+                                                  <div class="user-post-reply">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
                                 </div>
-                              </div>
-                          </div>
-            </div>
+                            </div>
+
+                  <?php endforeach; ?>
+                </div>
         </div>
     </div>

@@ -108,6 +108,7 @@
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-star"></i> <span class="mini-dn">Calificaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="?c=Usuario&a=VerPorcentajes" class="dropdown-item">Ver porcentajes</a>
+                                <a href="?c=Usuario&a=AsignarPorcentajes" class="dropdown-item">Asignar porcentajes</a>
                                 <a href="inbox.html" class="dropdown-item">Ver calificaiones</a>
                             </div>
                         </li>
@@ -737,13 +738,13 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a data-toggle="collapse" data-target="#Charts" href="#">Inicio <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                         </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Correo <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
-                                            <ul id="demo" class="collapse dropdown-header-top">
-                                                <li><a href="inbox.html">bandeja de entrada</a>
-                                                </li>
-                                                <li><a href="view-mail.html">Escribir mail</a>
-                                                </li>
-                                            </ul>
+                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Ingresar <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
+                                          <a href="?c=Usuario&a=IngresarUsuarios" class="dropdown-item">Usuario</a>
+                                          <a href="?c=Usuario&a=IngresarComunidad" class="dropdown-item">Comunidad</a>
+                                          <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
+                                          <a href="?c=Usuario&a=IngresarEdificio" class="dropdown-item">Edificio</a>
+                                          <a href="?c=Usuario&a=IngresarTareas" class="dropdown-item">Tarea</a>
+                                          <a href="?c=Usuario&a=AsignarConserje" class="dropdown-item">Asignar conserje</a>
                                         </li>
 
                                         <li><a data-toggle="collapse" data-target="#demo" href="#">Agregar <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>

@@ -1,5 +1,6 @@
 (function ($) {
  "use strict";
+ var calificacion = $("#calificacion").val();
 
 
             c3.generate({
@@ -74,7 +75,7 @@
                 bindto: '#gauge',
                 data:{
                     columns: [
-                        ['data', 40]
+                        ['data', calificacion]
                     ],
 
                     type: 'gauge'

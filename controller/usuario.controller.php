@@ -10,6 +10,8 @@ require_once 'model/alarma.php';
 require_once 'model/tarea.php';
 require_once 'model/comunicaciones.php';
 require_once 'model/porcalificaciones.php';
+require_once 'model/calificaciones.php';
+
 session_start();
 class UsuarioController
 {
@@ -24,6 +26,7 @@ class UsuarioController
   private $model_ta;
   private $model_comunicacion;
   private $model_porc;
+  private $model_ca;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -37,6 +40,7 @@ class UsuarioController
      $this->model_ta = new Tarea();
      $this->model_comunicacion = new Comunicaciones();
      $this->model_porc = new PorCalificaciones();
+     $this->model_ca  = new Calificacion();
    }
 
 
@@ -223,8 +227,16 @@ class UsuarioController
 
     public function Perfil()
     {
+      $c = new Calificacion;
       $u = new Usuario();
       $u = $this->model_us->listarID($_REQUEST['id']);
+      $alarmas = $this->model_ca->ListarCaAlarmas($_REQUEST['id']);
+      $tareas = $this->model_ca->ListarCaTareas($_REQUEST['id']);
+      $usuarios = $this->model_ca->ListarCaUsuarios($_REQUEST['id']);
+      $recorridos = $this->model_ca->ListarCaRecorridos($_REQUEST['id']);
+      // Porcetanejes
+      $porcentajes = $this->model_porc->listarId($u->idEdificio);
+
       require_once 'view/header.php';
       require_once 'view/perfil.php';
       require_once 'view/footer.php';
@@ -333,6 +345,8 @@ class UsuarioController
       $u->correo = $_REQUEST['correo'];
       $u->idTipo = $_REQUEST['idTipo'];
 
+      $nombre = $_REQUEST['nombre'];
+      $correo = $_REQUEST['correo'];
       //clave aleatorea
       for ($i = 0; $i < 7; $i++)
       {
@@ -341,8 +355,12 @@ class UsuarioController
       $u->password = $randomString;
 
       $this->model_us->InsertarUsuario($u);
-      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Usuarios";</script>';
+
+      header("Location:http://tecnoactive.cl/awake/mail.php?clave=$randomString&nombre=$nombre&correo=$correo");
+
+
     }
+
 
     public function RegistrarComunidad()
     {
