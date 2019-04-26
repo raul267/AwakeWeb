@@ -24,7 +24,7 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="login-input-head">
-                                                  <p>Comunidad</p>
+                                                  <p>Edificio</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">

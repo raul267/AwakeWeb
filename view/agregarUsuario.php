@@ -44,7 +44,7 @@
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
                                                 <input type="text" name="rut" id="rut" required oninput="checkRut(this)"/>
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                <i class="fa fa-user login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
                                                 <input type="email" name="correo" id="correo"/>
-                                                <i class="fa fa-tag login-user"></i>
+                                                <i class="fa fa-envelope login-user"></i>
                                             </div>
                                         </div>
                                     </div>

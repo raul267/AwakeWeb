@@ -44,7 +44,30 @@
                                                       <td><?php echo $row->direccionEdificio ?></td>
                                                       <td><?php echo $row->descripcionComunicacion ?></td>
                                                       <td><?php echo $row->fechaEnviado ?></td>
-                                                      <td><a href="?c=Usuario&a=EliminarComunicacion&id=<?php echo $row->idComunicacion ?>"><span class="glyphicon glyphicon-remove"></span></a></td>
+                                                      <td><a data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-remove"></span></a></td>
+
+
+
+                                                      <!-- Modal -->
+                                                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <h5 class="modal-title" id="exampleModalLabel"><h3>Se eliminara el mensaje</h3></h5>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                              </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                              <h4> <?php echo $row->descripcionComunicacion; ?></h4>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                              <a href="?c=Usuario&a=EliminarComunicacion&id=<?php echo $row->idComunicacion ?>" class="btn btn-danger">Eliminar</a>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
 
                                                 </tr>
                                                 <?php endforeach; ?>

@@ -8,16 +8,16 @@
     var sprintf = $.fn.bootstrapTable.utils.sprintf;
 
     var TYPE_NAME = {
-        json: 'JSON',
-        xml: 'XML',
-        png: 'PNG',
-        csv: 'CSV',
-        txt: 'TXT',
-        sql: 'SQL',
+        //json: 'JSON',
+      //  xml: 'XML',
+      //  png: 'PNG',
+      //  csv: 'CSV',
+      //  txt: 'TXT',
+      //  sql: 'SQL',
         doc: 'MS-Word',
         excel: 'MS-Excel',
         xlsx: 'MS-Excel (OpenXML)',
-        powerpoint: 'MS-Powerpoint',
+      //  powerpoint: 'MS-Powerpoint',
         pdf: 'PDF'
     };
 

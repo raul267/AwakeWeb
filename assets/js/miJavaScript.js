@@ -86,3 +86,63 @@ else {
 },10);
 
 }
+
+//Validar tamño fotoPerfil
+$("#fotoPerfil").change(function(){
+  var tamaño = this.files[0].size;
+  if (tamaño > 2000000)
+  {
+    alert("EL tamaño maximo son 2 mb");
+    this.value = '';
+  }
+
+})
+
+// Mensaje alerta al cambia de pagina
+/*window.onbeforeunload = function(event) {
+    var s = "You have unsaved changes. Really leave?";
+
+    event = event || window.event;
+    if (event) {
+        // This is for IE
+
+    }
+
+    // This is for all other browsers
+    return s;
+}*/
+
+//Filtar comunas
+ $(function()
+    {
+    $("#idRegion").on("change",function()
+    {
+  var idRegion = "";
+
+    idRegion = $(this).val();
+
+
+    $.post('acciones/accion_filtrar_comunas.php',{idRegion:idRegion},function(datos)
+    {
+      $("#idComuna").html(datos);
+    });
+  });
+    });
+
+
+    //Filtar comunas
+     $(function()
+        {
+        $("#idRegion1").on("change",function()
+        {
+      var idRegion = "";
+
+        idRegion = $(this).val();
+
+
+        $.post('acciones/accion_filtrar_comunas.php',{idRegion:idRegion},function(datos)
+        {
+          $("#idComuna1").html(datos);
+        });
+      });
+        });

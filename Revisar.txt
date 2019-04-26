@@ -1,0 +1,43 @@
+Awake
+  Listo
+
+    Cuando creo usuario, comunidad edificio etc... al terminar la tarea me debiese mandar a la lista de destino (OJO) (Check)
+    En asignar conserje a edificio, cambiar texto (check)
+    Al exportar, tiene q dar una sola opción. Excel y sin error (check)
+    Borrar asignar porcentajes (check)
+    Al pinchar foto, enviar a mi perfil (check)
+    opciones, mi cuenta... llevar a mi cuenta (check)
+    Al eliminar comunicacion, mensaje de alerta (Check)
+    Fotos grandes no suben (check)
+
+  Semi
+    contraseña debe exigir seguridad (Inimo 6 caracteres, mayuscula y numero) (Falta mayuscula y numero)
+
+
+  No
+
+    Rut con digito verificador debe avisar de inmediato su no funcion
+    Revisar logos o iconos de los items al crear algo
+    Falta poder editar todo en la web (dios)
+    Mensaje que si no se ternmina la creacion de algo, perdera los avancess
+
+
+
+
+
+Conversar con jose luis
+
+  Revisar boton contactar con JLP
+  Boton actualizar no hace nada (eliminado)
+  hide show pagination... sera necesario? (eliminado)
+  Definir boton inicio (hoy muesta el dashboard de comunidades)
+  Ver alarmas con JLP
+  En informacion de edificios evaluar que mas se puede mostrar (n° dptos x ejem)
+  Ver tares con JLP (quizas separar fecha de hora)
+  En listar tareas que no se pueda editar ni borrar (preguntar JLP)
+  Definir nombre para "listar" y ordenar segun criterio de uso y tareas y alarmas solo en perfil de administrador
+  Ver porsentajes, cambiar texo
+
+
+  Cosas por hacer
+    Departamentos

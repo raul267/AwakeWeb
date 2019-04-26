@@ -49,7 +49,7 @@
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
                                                 <input type="text" name="nombreComunidad" id="nombreComunidad" />
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                <i class="fa fa-tag login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select name="idRegion" id="idRegion"class="form-control custom-select-value">
+                                                <select name="idRegion" id="idRegion1"class="form-control custom-select-value">
                                                   <option value="">Selecciona una region</option>
                                                   <?php foreach ($r->listar() as $row): ?>
                                                     <option value="<?php echo $row->idRegion ?>"><?php echo $row->nombreRegion ?></option>
@@ -79,11 +79,8 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select name="idComuna" id="idComuna"class="form-control custom-select-value">
-                                                  <option value="">Selecciona una Comuna</option>
-                                                  <?php foreach ($c->listar() as $row): ?>
-                                                    <option value="<?php echo $row->idComuna ?>"><?php echo $row->nombreComuna ?></option>
-                                                  <?php endforeach; ?>
+                                                <select name="idComuna" id="idComuna1" name="idComuna"class="form-control custom-select-value">
+
                                                 </select>
 
                                             </div>
@@ -99,7 +96,7 @@
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
                                                 <input type="text" name="direccionComunidad" id="direccionComunidad" />
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                <i class="fa fa-map login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>

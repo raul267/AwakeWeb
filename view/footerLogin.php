@@ -15,6 +15,8 @@
 <!--===============================================================================================-->
 	<script src="assetsLogin/js/main.js"></script>
 	<script src="assets/js/validaRut.js"></script>
+	<script src="assets/js/validarPass.js"></script>
+	<script src="assets/js/miJavaScript.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#radioOtro").change(function(){

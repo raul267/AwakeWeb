@@ -54,7 +54,27 @@
                                                       <td><?php echo $row->correo ?></td>
                                                       <td><?php echo $row->Nacionalidad ?></td>
                                                       <td><?php echo $row->ultimaConexion ?></td>
-                                                      <td>67.4</td>
+                                                      <td><?php
+
+                                                      $us = $u->listarID($row->idEdificio);
+                                                      $alarmas = $c->ListarCaAlarmas($row->idEdificio);
+                                                      $tareas = $c->ListarCaTareas($row->idEdificio);
+                                                      $usuarios = $c->ListarCaUsuarios($row->idEdificio);
+                                                      $recorridos = $c->ListarCaRecorridos($row->idEdificio);
+                                                      // Porcetanejes
+                                                      $porcentajes = $this->model_porc->listarId($us->idEdificio);
+
+                                                      echo $alarmas->alarma;
+
+                                                    //  $calificacion = (($alarmas->alarma * $porcentajes->alarmas)/100) + (($tareas->tarea * $porcentajes->tareas)/100) + (($recorridos->recorrido * $porcentajes->recorridos)/100) + (($usuarios->usuario * $porcentajes->usuarios)/100);
+                                                      //echo $calificacion;
+
+
+
+
+
+
+                                                       ?></td>
                                                       <td class="centrado"><a href="?c=Usuario&a=Perfil&id=<?php echo $row->idUsuario ?>"<span class="glyphicon glyphicon-user"></span></a></td>
                                                 </tr>
                                                 <?php endforeach; ?>

@@ -73,18 +73,19 @@
 
 					<div id="divNacionalidad"></div>
 
-					<input class="input100" type="file" name="fotoPerfil" id="fotoPerfil">
+					<input class="input100" type="file" accept="image/png, image/jpeg, image/jpg" name="fotoPerfil" id="fotoPerfil">
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Seleciona una foto">
 						<label for="">Selecciona una foto de perfil</label>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa tu nueva contraseña">
-						<input class="input100" type="password" name="password" id="password">
+						<input class="input100" minlength="6"  type="password" name="password" id="password">
+
 						<span class="focus-input100" data-placeholder="Ingresa tu nueva contraseña"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
-						<input class="input100" type="password" name="password2" id="password2">
+						<input class="input100"  minlength="6" type="password" name="password2" id="password2">
 						<span class="focus-input100" data-placeholder="Confirme la contraseña"></span>
 					</div>
 

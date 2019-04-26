@@ -204,6 +204,9 @@ class UsuarioController
     {
       $c = new Edificio();
       $u = new Usuario();
+
+      $c = new Calificacion;
+      $us = new Usuario();
       require_once 'view/header.php';
       require_once 'view/listarConserjes.php';
       require_once 'view/footer.php';
@@ -242,6 +245,23 @@ class UsuarioController
       require_once 'view/footer.php';
     }
 
+    public function MiPerfil()
+    {
+      $c = new Calificacion;
+      $u = $this->model_us->listarID($_SESSION['id']);
+
+      $alarmas = $this->model_ca->ListarCaAlarmas($_SESSION['id']);
+      $tareas = $this->model_ca->ListarCaTareas($_SESSION['id']);
+      $usuarios = $this->model_ca->ListarCaUsuarios($_SESSION['id']);
+      $recorridos = $this->model_ca->ListarCaRecorridos($_SESSION['id']);
+      // Porcetanejes
+      $porcentajes = $this->model_porc->listarId($u->idEdificio);
+
+      require_once 'view/header.php';
+      require_once 'view/MiPerfil.php';
+      require_once 'view/footer.php';
+    }
+
     public function AsignarPorcentajes()
     {
       $p = new PorCalificaciones();
@@ -266,7 +286,7 @@ class UsuarioController
       $u = new Usuario();
 
       //asigno variables
-        $u->tipoUsuario = $_REQUEST['idTipo'];
+        $u->tipoUsuario = 4;//$_REQUEST['idTipo'];
         $u->nombre = $_REQUEST['nombre'];
         $u->rut = $_REQUEST['rut'];
         $u->password = $_REQUEST['password'];
@@ -286,7 +306,7 @@ class UsuarioController
        move_uploaded_file($archivo, $ruta);
         $u->fotoPerfil = $ruta;
         $u->fechaNacimiento = $_REQUEST['fechaNacimiento'];
-        $u->idTipo = $_REQUEST['idTipo'];
+        $u->idTipo = 4;
         $u->descripcionUsuario = $_REQUEST['descripcionUsuario'];
         $u->estadoUsuario = 1;
 
@@ -484,7 +504,7 @@ class UsuarioController
       $edificio = $_REQUEST['idEdificio'];
 
       $this->model_us->AsignarConserje($edificio,$usuario);
-      echo '<script language="javascript">alert("Exito al Asignar Conserje"); window.location.href="index.php?c=Usuario&a=Tareas"; </script>';
+      echo '<script language="javascript">alert("Exito al Asignar Conserje"); window.location.href="index.php?c=Usuario&a=Comunidades"; </script>';
     }
 
     public function IngresarComunicacion()
@@ -520,7 +540,7 @@ class UsuarioController
       $id = $_REQUEST['id'];
       $this->model_comunicacion->Delete($id);
 
-      echo '<script language="javascript">alert("Se elimino  la comunicacion"); window.location.href="index.php?c=Usuario&a=ListarComunicaciones"; </script>';
+    header('Location: ?c=Usuario&a=ListarComunicaciones');
     }
 }
  ?>
