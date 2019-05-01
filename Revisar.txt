@@ -9,6 +9,7 @@ Awake
     opciones, mi cuenta... llevar a mi cuenta (check)
     Al eliminar comunicacion, mensaje de alerta (Check)
     Fotos grandes no suben (check)
+    Revisar logos o iconos de los items al crear algo
 
   Semi
     contraseña debe exigir seguridad (Inimo 6 caracteres, mayuscula y numero) (Falta mayuscula y numero)
@@ -17,7 +18,6 @@ Awake
   No
 
     Rut con digito verificador debe avisar de inmediato su no funcion
-    Revisar logos o iconos de los items al crear algo
     Falta poder editar todo en la web (dios)
     Mensaje que si no se ternmina la creacion de algo, perdera los avancess
 

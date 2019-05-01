@@ -47,7 +47,7 @@
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
                                                 <input type="text" name="direccionEdificio" id="direccionEdificio" />
-                                                <i class="fa fa-envelope login-user" aria-hidden="true"></i>
+                                                <i class="fa fa-map login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>

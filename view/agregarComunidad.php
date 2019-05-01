@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select name="idRegion" id="idRegion1"class="form-control custom-select-value">
+                                                <select name="idRegion" id="idRegion"class="form-control custom-select-value">
                                                   <option value="">Selecciona una region</option>
                                                   <?php foreach ($r->listar() as $row): ?>
                                                     <option value="<?php echo $row->idRegion ?>"><?php echo $row->nombreRegion ?></option>
@@ -79,8 +79,8 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <select name="idComuna" id="idComuna1" name="idComuna"class="form-control custom-select-value">
-
+                                                <select name="idComuna" id="idComuna" name="idComuna"class="form-control custom-select-value">
+                                                    <option>Selecciona tu comuna</option>
                                                 </select>
 
                                             </div>

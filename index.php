@@ -10,11 +10,6 @@ if(!isset($_REQUEST['c']))
 	$controller = ucwords($controller) .'Controller';
 	$controller = new $controller;
 	$controller->Index();
-
-
-
-	
-
 }
 else
 {

@@ -55,6 +55,11 @@ class UsuarioController
 
     public function Usuarios()
      {
+       if ($_SESSION['id'] == null)
+        {
+          header('Location:index.php');
+          exit();
+        }
        $u = new Usuario();
        require_once 'view/header.php';
        require_once 'view/listarUsuarios.php';
@@ -63,6 +68,13 @@ class UsuarioController
 
     public function Registrar()
     {
+
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
       $r = new Region();
       $c = new Comuna();
@@ -74,6 +86,13 @@ class UsuarioController
 
     public function Registrar2()
     {
+
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
       $r = new Region();
       $c = new Comuna();
@@ -85,18 +104,30 @@ class UsuarioController
 
     public function Dashboard()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
       $r = new Region();
       $c = new Comuna();
       $t = new tipoUsuario();
       $co = new Comunidad();
       require_once 'view/header.php';
-      require_once 'view/dashboard.php';
+      require_once 'view/dashboard2.php';
       require_once 'view/footer.php';
     }
 
     public function Comunidades()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
         $u = new Usuario();
         $r = new Region();
         $c = new Comuna();
@@ -109,6 +140,12 @@ class UsuarioController
 
     public function IngresarUsuarios()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
       $t = new Tipousuario();
       require_once 'view/header.php';
@@ -118,6 +155,12 @@ class UsuarioController
 
     public function IngresarEdificio()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $e = new Edificio();
       $c = new Comunidad();
       require_once 'view/header.php';
@@ -127,6 +170,12 @@ class UsuarioController
 
     public function IngresarComunidad()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
       $r = new Region();
       $c = new Comuna();
@@ -137,6 +186,12 @@ class UsuarioController
 
     public function Edificios()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $e = new Edificio();
 
       require_once 'view/header.php';
@@ -146,6 +201,12 @@ class UsuarioController
 
     public function EdificiosPorComunidad()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $e = new Edificio();
 
       require_once 'view/header.php';
@@ -155,6 +216,12 @@ class UsuarioController
 
     public function Alarmas()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $a = new Alarma();
 
       require_once 'view/header.php';
@@ -164,6 +231,12 @@ class UsuarioController
 
     public function AgregarAlarma()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $a = new Alarma();
       $c = new Comunidad();
 
@@ -174,6 +247,12 @@ class UsuarioController
 
     public function Tareas()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
         $t = new Tarea();
 
         require_once 'view/header.php';
@@ -183,6 +262,12 @@ class UsuarioController
 
     public function IngresarTareas()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
         $t = new Tarea();
         $e = new Edificio();
 
@@ -193,6 +278,12 @@ class UsuarioController
 
     public function AsignarConserje()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Edificio();
       $co = new Usuario();
       require_once 'view/header.php';
@@ -202,6 +293,12 @@ class UsuarioController
 
     public function ListarConserjes()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Edificio();
       $u = new Usuario();
 
@@ -214,6 +311,12 @@ class UsuarioController
 
     public function AgregarComunicacion()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $e = new Edificio();
       require_once 'view/header.php';
       require_once 'view/agregarComunicacion.php';
@@ -222,6 +325,12 @@ class UsuarioController
 
     public function ListarComunicaciones()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Comunicaciones();
       require_once 'view/header.php';
       require_once 'view/listarComunicaciones.php';
@@ -230,6 +339,12 @@ class UsuarioController
 
     public function Perfil()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Calificacion;
       $u = new Usuario();
       $u = $this->model_us->listarID($_REQUEST['id']);
@@ -247,6 +362,12 @@ class UsuarioController
 
     public function MiPerfil()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Calificacion;
       $u = $this->model_us->listarID($_SESSION['id']);
 
@@ -264,6 +385,12 @@ class UsuarioController
 
     public function AsignarPorcentajes()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $p = new PorCalificaciones();
       $p = $this->model_porc->listarID($_REQUEST['id']);
       require_once 'view/header.php';
@@ -273,6 +400,12 @@ class UsuarioController
 
     public function VerPorcentajes()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $p = new PorCalificaciones();
       require_once 'view/header.php';
       require_once 'view/listarPorcentajes.php';
@@ -282,6 +415,12 @@ class UsuarioController
 
     public function RegistrarUsuarios()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       //creacion usuario
       $u = new Usuario();
 
@@ -318,6 +457,12 @@ class UsuarioController
     }
     public function RegistrarUsuarios2()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       //creacion usuario
       $u = new Usuario();
 
@@ -355,6 +500,12 @@ class UsuarioController
 
     public function RegistrarUsuarioNuevo()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $u = new Usuario();
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -384,6 +535,12 @@ class UsuarioController
 
     public function RegistrarComunidad()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $c = new Comunidad();
 
       // Asignar atributos a comunidad
@@ -400,6 +557,12 @@ class UsuarioController
 
     public function RegistrarEdificio()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $e = new Edificio();
       $p = new PorCalificaciones();
 
@@ -418,6 +581,7 @@ class UsuarioController
 
     public function Ingresar()
     {
+
        date_default_timezone_set('America/Santiago');
       $u = new Usuario();
       $rut= $_REQUEST['rut'];
@@ -477,6 +641,12 @@ class UsuarioController
 
     public function IngresarAlarma()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $a = new Alarma();
       $a->idComunidad = $_REQUEST['idComunidad'];
       $a->fechaAlarma = $_REQUEST['fechaAlarma'];
@@ -488,6 +658,12 @@ class UsuarioController
 
     public function RegistrarTareas()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $t = new Tarea();
 
       $t->idEdificio = $_REQUEST['idEdificio'];
@@ -500,6 +676,12 @@ class UsuarioController
 
     public function AsignarConserjeEdificio()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $usuario = $_REQUEST['idUsuario'];
       $edificio = $_REQUEST['idEdificio'];
 
@@ -509,6 +691,12 @@ class UsuarioController
 
     public function IngresarComunicacion()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       date_default_timezone_set('America/Santiago');
 
        $descripcion = $_REQUEST['descripcionTarea'];
@@ -522,6 +710,12 @@ class UsuarioController
 
     public function CambiarPorcentajes()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $p = new PorCalificaciones();
 
      $p->porcTareas = $_REQUEST['porcTareas'];
@@ -537,6 +731,12 @@ class UsuarioController
 
     public function EliminarComunicacion()
     {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
       $id = $_REQUEST['id'];
       $this->model_comunicacion->Delete($id);
 

@@ -79,13 +79,13 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa tu nueva contraseña">
-						<input class="input100" minlength="6"  type="password" name="password" id="password">
+						<input class="input100" minlength="6"  pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" title="Una mayuscula, una minuscula y una letra"  type="password" name="password" id="password">
 
 						<span class="focus-input100" data-placeholder="Ingresa tu nueva contraseña"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
-						<input class="input100"  minlength="6" type="password" name="password2" id="password2">
+						<input class="input100"  minlength="6"  pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" title="Una mayuscula, una minuscula y una letra" type="password" name="password2" id="password2">
 						<span class="focus-input100" data-placeholder="Confirme la contraseña"></span>
 					</div>
 

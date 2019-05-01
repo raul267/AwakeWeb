@@ -116,33 +116,33 @@ $("#fotoPerfil").change(function(){
  $(function()
     {
     $("#idRegion").on("change",function()
-    {
-  var idRegion = "";
-
-    idRegion = $(this).val();
-
-
-    $.post('acciones/accion_filtrar_comunas.php',{idRegion:idRegion},function(datos)
-    {
-      $("#idComuna").html(datos);
-    });
-  });
-    });
-
-
-    //Filtar comunas
-     $(function()
         {
-        $("#idRegion1").on("change",function()
-        {
-      var idRegion = "";
+          var idRegion = "";
 
         idRegion = $(this).val();
 
 
         $.post('acciones/accion_filtrar_comunas.php',{idRegion:idRegion},function(datos)
         {
-          $("#idComuna1").html(datos);
+          $("#idComuna").html(datos);
         });
       });
-        });
+    });
+
+
+
+//Dashboard
+$(function()
+   {
+   $("#idAccion").on("change",function()
+       {
+         var idAccion = "";
+
+       idAccion = $(this).val();
+       
+       $.post('acciones/accion_dashboard.php',{idAccion:idAccion},function(datos)
+       {
+         $("#dashboardA").html(datos);
+       });
+     });
+   });

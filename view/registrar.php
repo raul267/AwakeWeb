@@ -29,7 +29,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Ingresa el correo">
-						<input class="input100" type="text" name="correo" id="correo">
+						<input class="input100" type="email" name="correo" id="correo" required>
 						<span class="focus-input100" data-placeholder="Ingrese su correo electronico"></span>
 					</div>
 
@@ -84,13 +84,13 @@
 
 					<div class="form-group" id="fgClave">
 						<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
-							<input class="input100"   minlength="6"  type="password" name="password" id="password">
+							<input class="input100"   minlength="6"  pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" title="Una mayuscula, una minuscula y una letra" type="password" name="password" id="password">
 							<span class="focus-input100" data-placeholder="Confirma la contraseña"></span>
 						</div>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Ingresa la contraseña">
-						<input class="input100" minlength="6" type="password" name="password2" id="password2">
+						<input class="input100" minlength="6" pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" title="Una mayuscula, una minuscula y una letra" type="password" name="password2" id="password2">
 
 						<span class="focus-input100" data-placeholder="Confirme la contraseña"></span>
 					</div>
