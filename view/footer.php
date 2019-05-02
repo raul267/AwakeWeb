@@ -18,8 +18,7 @@
 <!-- jquery
 ============================================ -->
 <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
-<script src="assets/js/miJavaScript.js" charset="utf-8"></script>
-<script src="assets/js/validarPass.js" charset="utf-8"></script>
+
 <!-- bootstrap JS
 ============================================ -->
 <script src="assets/js/bootstrap.min.js"></script>
@@ -67,6 +66,7 @@
 <script src="assets/js/map/map-active.js"></script>
 <!-- data table JS
 ============================================ -->
+<script src="assets/js/miJavaScript.js" charset="utf-8"></script>
 <script src="assets/js/data-table/bootstrap-table.js"></script>
 <script src="assets/js/data-table/tableExport.js"></script>
 <script src="assets/js/data-table/data-table-active.js"></script>
@@ -83,6 +83,7 @@
 <script src="assets/js/main.js"></script>
 
 
+<script src="assets/js/validarPass.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $('#table').dataTable({language: {
@@ -141,6 +142,8 @@ $(document).ready(function() {
 
 
 </script>
+
+
 
 </body>
 
