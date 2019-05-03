@@ -19,6 +19,6 @@
         </div>
         <br><br><br>
 
-        <div id="dashboardA">
+        <div id="dashboardA" class="admin-dashone-data-table-area">
 
         </div>

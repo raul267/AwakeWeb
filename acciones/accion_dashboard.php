@@ -19,7 +19,7 @@ mysqli_set_charset($con, 'utf8');
     switch ($idAccion) {
    case 1:
          echo '
-         <div class="admin-dashone-data-table-area">
+
              <div class="container-fluid">
                  <div class="row">
                      <div class="col-lg-12">
@@ -53,7 +53,7 @@ mysqli_set_charset($con, 'utf8');
                                                  <th data-field="Numero Administrador" data-editable="true">Numero admin</th>
                                                  <th data-field="Contactar Administrador" data-editable="true">Contactar admin</th>
                                                  <th data-field="Conserjes" data-editable="true">Conserjes</th>
-                                                
+
                                                  <th data-field="Editar" data-editable="true">Editar</th>
                                              </tr>
                                          </thead>
@@ -100,7 +100,7 @@ mysqli_set_charset($con, 'utf8');
              </div>
          </div>
 				 </div>
-     </div>
+     
 
 
 

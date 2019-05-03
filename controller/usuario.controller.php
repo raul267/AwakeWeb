@@ -11,6 +11,7 @@ require_once 'model/tarea.php';
 require_once 'model/comunicaciones.php';
 require_once 'model/porcalificaciones.php';
 require_once 'model/calificaciones.php';
+require_once 'model/departamento.php';
 
 session_start();
 class UsuarioController
@@ -27,6 +28,7 @@ class UsuarioController
   private $model_comunicacion;
   private $model_porc;
   private $model_ca;
+  private $model_de;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -41,6 +43,7 @@ class UsuarioController
      $this->model_comunicacion = new Comunicaciones();
      $this->model_porc = new PorCalificaciones();
      $this->model_ca  = new Calificacion();
+     $this->model_de = new Departamento();
    }
 
 
@@ -562,21 +565,51 @@ class UsuarioController
          header('Location:index.php');
          exit();
        }
-
+      $d = new Departamento();
       $e = new Edificio();
       $p = new PorCalificaciones();
 
+// Ingresar Edificio
       $e->idComunidad = $_REQUEST['idComunidad'];
       $e->direccionEdificio = $_REQUEST['direccionEdificio'];
 
-      $this->model_edi->Insertar($e);
+    //  $this->model_edi->Insertar($e);
 
-      $idEdificio = $this->model_edi->ListarUltimoEdificio();
+//Ingresar porcentajes
+      //$idEdificio = $this->model_edi->ListarUltimoEdificio();
       $idEdificio->idEdificio;
 
+      //Ingresar departamentos
+      echo'depar: '. $nDepartamentos= $_REQUEST['numeroDepartamentos'];
+      echo'tipo: '. $tipoEnumeracion = $_REQUEST['tipoEnumeracion'];
 
-     $this->model_porc->Insertar($idEdificio->idEdificio);
-      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
+      switch ($tipoEnumeracion)
+      {
+    case 1:
+        for ($i=1; $i <= $nDepartamentos ; $i++)
+        {
+          echo $i;
+        }
+        break;
+    case 2:
+        for ($i=1; $i <$nDepartamentos ; $i++) {
+          if ($i%2==0)
+          {
+          echo'pares: ' .$i;
+          }
+        }
+        break;
+    case 3:
+        for ($i=0; $i <$nDepartamentos ; $i++) {
+          if ($i%2!=0) {
+            echo $i;
+          }
+        }
+        break;
+      }
+
+     //$this->model_porc->Insertar($idEdificio->idEdificio);
+    //  echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
     }
 
     public function Ingresar()
