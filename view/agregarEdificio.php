@@ -60,8 +60,8 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="numeroPisos" id="numeroPisos" />
-                                                <i class="fa fa-map login-user" aria-hidden="true"></i>
+                                                <input type="number" name="numeroPisos" id="numeroPisos" />
+                                                <i class="fa fa-building login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>

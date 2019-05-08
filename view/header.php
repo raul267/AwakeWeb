@@ -88,8 +88,9 @@
                           <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                             <a href="?c=Usuario&a=IngresarUsuarios" class="dropdown-item">Usuario</a>
                             <a href="?c=Usuario&a=IngresarComunidad" class="dropdown-item">Comunidad</a>
-                            <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
                             <a href="?c=Usuario&a=IngresarEdificio" class="dropdown-item">Edificio</a>
+                            <a href="?c=Usuario&a=IngresarDepartamentos" class="dropdown-item">Departamentos</a>
+                            <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
                             <a href="?c=Usuario&a=IngresarTareas" class="dropdown-item">Tarea</a>
                             <a href="?c=Usuario&a=AsignarConserje" class="dropdown-item">Asignar conserje</a>
                           </div>
@@ -100,15 +101,16 @@
                             <a href="?c=Usuario&a=Usuarios" class="dropdown-item">Usuarios</a>
                             <a href="?c=Usuario&a=ListarConserjes" class="dropdown-item">Conserjes</a>
                             <a href="?c=Usuario&a=Comunidades" class="dropdown-item">Comunidades</a>
-                            <a href="?c=Usuario&a=Alarmas" class="dropdown-item">Alarmas</a>
                             <a href="?c=Usuario&a=Edificios" class="dropdown-item">Edificios</a>
+                            <a href="?c=Usuario&a=ListarDepartamentos" class="dropdown-item">Departamentos</a>
+                            <a href="?c=Usuario&a=Alarmas" class="dropdown-item">Alarmas</a>
                             <a href="?c=Usuario&a=Tareas" class="dropdown-item">Tareas</a>
                           </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-star"></i> <span class="mini-dn">Calificaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
                             <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                 <a href="?c=Usuario&a=VerPorcentajes" class="dropdown-item">Ver porcentajes</a>
-                                
+
                             </div>
                         </li>
                         <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Comunicaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
@@ -180,8 +182,9 @@
                                         <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
                                           <a href="?c=Usuario&a=IngresarUsuarios" class="dropdown-item">Usuario</a>
                                           <a href="?c=Usuario&a=IngresarComunidad" class="dropdown-item">Comunidad</a>
-                                          <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
                                           <a href="?c=Usuario&a=IngresarEdificio" class="dropdown-item">Edificio</a>
+                                          <a href="?c=Usuario&a=IngresarDepartamentos" class="dropdown-item">Departamentos</a>
+                                          <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
                                           <a href="?c=Usuario&a=IngresarTareas" class="dropdown-item">Tarea</a>
                                           <a href="?c=Usuario&a=AsignarConserje" class="dropdown-item">Asignar conserje</a>
                                         </div>

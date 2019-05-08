@@ -156,6 +156,22 @@ class UsuarioController
       require_once 'view/footer.php';
     }
 
+
+        public function IngresarDepartamentos()
+        {
+          if ($_SESSION['id'] == null)
+           {
+             header('Location:index.php');
+             exit();
+           }
+
+          $e = new Edificio();
+          $d = new Departamento();
+          require_once 'view/header.php';
+          require_once 'view/agregarDepartamentos.php';
+          require_once 'view/footer.php';
+        }
+
     public function IngresarEdificio()
     {
       if ($_SESSION['id'] == null)
@@ -309,6 +325,22 @@ class UsuarioController
       $us = new Usuario();
       require_once 'view/header.php';
       require_once 'view/listarConserjes.php';
+      require_once 'view/footer.php';
+    }
+
+    public function ListarDepartamentos()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
+      $e = new Edificio();
+      $d = new Departamento();
+
+      require_once 'view/header.php';
+      require_once 'view/listarDepartamentos.php';
       require_once 'view/footer.php';
     }
 
@@ -565,6 +597,7 @@ class UsuarioController
          header('Location:index.php');
          exit();
        }
+
       $d = new Departamento();
       $e = new Edificio();
       $p = new PorCalificaciones();
@@ -582,6 +615,30 @@ class UsuarioController
 
      $this->model_porc->Insertar($idEdificio->idEdificio);
       echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
+    }
+
+    public function RegistrarDepartamentos()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $d = new Departamento();
+       $e = new Edificio();
+
+       $idEdificio = $_REQUEST['idEdificio'];
+       $cantD = $_REQUEST['cantDepartamentos'];
+
+
+      for ($i=1; $i <= $cantD ; $i++)
+      {
+          $d->idEdificio = $_REQUEST['idEdificio'];
+          $d->numeroDepartamento = $_REQUEST['numeroDepartamento'.$i];
+          $this->model_de->Insertar($d);
+      }
+
+
     }
 
     public function Ingresar()

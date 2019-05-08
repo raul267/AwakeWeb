@@ -139,7 +139,7 @@ $(function()
          var idAccion = "";
 
        idAccion = $(this).val();
-       
+
        $.post('acciones/accion_dashboard.php',{idAccion:idAccion},function(datos)
        {
          $("#dashboardA").html(datos);
