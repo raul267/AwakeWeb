@@ -572,44 +572,16 @@ class UsuarioController
 // Ingresar Edificio
       $e->idComunidad = $_REQUEST['idComunidad'];
       $e->direccionEdificio = $_REQUEST['direccionEdificio'];
+      $e->numeroPisos = $_REQUEST['numeroPisos'];
 
-    //  $this->model_edi->Insertar($e);
+      $this->model_edi->Insertar($e);
 
 //Ingresar porcentajes
-      //$idEdificio = $this->model_edi->ListarUltimoEdificio();
+      $idEdificio = $this->model_edi->ListarUltimoEdificio();
       $idEdificio->idEdificio;
 
-      //Ingresar departamentos
-      echo'depar: '. $nDepartamentos= $_REQUEST['numeroDepartamentos'];
-      echo'tipo: '. $tipoEnumeracion = $_REQUEST['tipoEnumeracion'];
-
-      switch ($tipoEnumeracion)
-      {
-    case 1:
-        for ($i=1; $i <= $nDepartamentos ; $i++)
-        {
-          echo $i;
-        }
-        break;
-    case 2:
-        for ($i=1; $i <$nDepartamentos ; $i++) {
-          if ($i%2==0)
-          {
-          echo'pares: ' .$i;
-          }
-        }
-        break;
-    case 3:
-        for ($i=0; $i <$nDepartamentos ; $i++) {
-          if ($i%2!=0) {
-            echo $i;
-          }
-        }
-        break;
-      }
-
-     //$this->model_porc->Insertar($idEdificio->idEdificio);
-    //  echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
+     $this->model_porc->Insertar($idEdificio->idEdificio);
+      echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Edificios";</script>';
     }
 
     public function Ingresar()

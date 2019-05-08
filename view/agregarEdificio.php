@@ -55,35 +55,18 @@
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="login-input-head">
-                                                <p>Numero departamentos</p>
+                                                <p>Numero de pisos</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="login-input-area">
-                                                <input type="text" name="numeroDepartamentos" id="numeroDepartamentos" />
+                                                <input type="text" name="numeroPisos" id="numeroPisos" />
                                                 <i class="fa fa-map login-user" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="login-input-head">
-                                                <p>Tipo Enumeracion</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="login-input-area">
-                                                <select class="form-control custom-select-value" name="tipoEnumeracion">
-                                                  <option value="">Seleccione una opcion</option>
-                                                  <option value="1">Enumeraracion normal (1,2,3)</option>
-                                                  <option value="2">Pares (2,4,6)</option>
-                                                  <option value="3">Impares (1,3,5)</option>
-                                                </select>
 
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-4"></div>

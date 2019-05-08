@@ -4,6 +4,7 @@ class edificio
   private $conn;
   public $idComunidad;
   public $direccionEdificio;
+  public $numeroPisos;
 
   public function __CONSTRUCT()
    {
@@ -19,8 +20,8 @@ class edificio
 
    public function Insertar($e)
    {
-     $sql = $this->conn->prepare("INSERT INTO edificio (idComunidad,direccionEdificio) VALUES (?,?)");
-     $sql->execute(array($e->idComunidad,$e->direccionEdificio));
+     $sql = $this->conn->prepare("INSERT INTO edificio (idComunidad,direccionEdificio,numeroPisos) VALUES (?,?,?)");
+     $sql->execute(array($e->idComunidad,$e->direccionEdificio,$e->numeroPisos));
    }
 
    public function Listar()

@@ -4,7 +4,7 @@ class departamento
   private $conn;
   public $idEdificio;
   public $idDueno;
-  public $numeroDepartamentos;
+  public $numeroDepartamento;
 
   public function __CONSTRUCT()
    {
@@ -20,8 +20,8 @@ class departamento
 
    public function Insertar($d)
    {
-     $sql = $this->conn->prepare("INSERT INTO departamento (idEdificio, idDueno, numeroDepartamentos) VALUES (?,?,3)");
-     $sql->execute(array($d->idEdificio, $d->idDueno, $d->numeroDepartamentos));
+     $sql = $this->conn->prepare("INSERT INTO departamento (idEdificio, idDueno, numeroDepartamento) VALUES (?,?,3)");
+     $sql->execute(array($d->idEdificio, $d->idDueno, $d->numeroDepartamento));
    }
 
    public function Listar()
