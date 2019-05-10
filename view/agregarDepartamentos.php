@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="login-input-area">
-                                    <select class="form-control custom-select-value" name="idEdificio" id="idEdificio">
+                                    <select class="form-control custom-select-value" name="idEdificio" id="idEdificio" required>
                                       <option value="">Selecciona un edificio</option>
                                     <?php foreach ($e->Listar() as $row): ?>
                                       <option value="<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></option>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="login-input-area">
-                                    <input type="text" name="cantDepartamentos" id="cantDepartamentos" />
+                                    <input type="text" name="cantDepartamentos" id="cantDepartamentos" required />
                                     <i class="fa fa-map login-user" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -57,17 +57,17 @@
 
                         <div class="row">
 
-                            <div class="col-lg-4">
+                          <div class="col-lg-6">
+                            <div class="login-button-pro">
+                              <button disabled class="btn btn-success"type="button" id="btnAgregarT">Agregar numero de departamentos</button>
+                            </div>
+                          </div>
+                            <div class="col-lg-6">
                                 <div class="login-button-pro">
-                                    <button type="submit" class="login-button login-button-lg">Crear</button>
+                                    <button  type="submit" class="login-button login-button-lg">Crear</button>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4">
-                                <div class="login-button-pro">
-                                    <button class="btn btn-success"type="button" id="btnAgregarT">Agregar numero de departamentos</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

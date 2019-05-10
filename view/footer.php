@@ -142,13 +142,20 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
+
+    $("#cantDepartamentos").on("change",function(){
+        $("#btnAgregarT").prop("disabled",false);
+
+    });
+
     $("#btnAgregarT").on("click",function()
     {
       var a = $("#cantDepartamentos").val();
 
       for (var i = 1; i <=a; i++)
       {
-        $("#nDepartamentos").append('<div class="row"><div class="col-lg-4"><div class="login-input-head"><p>'+i+'</p></div></div><div class="col-lg-8"><div class="login-input-area"><input type="text" name="numeroDepartamento'+i+'" id="numeroDepartamento'+i+'" /><i class="fa fa-map login-user" aria-hidden="true"></i></div></div></div>');
+        $("#nDepartamentos").append('<div class="row"><div class="col-lg-4"><div class="login-input-head"><p>'+i+'</p></div></div><div class="col-lg-8"><div class="login-input-area"><input required type="text" name="numeroDepartamento'+i+'" id="numeroDepartamento'+i+'" /><i class="fa fa-map login-user" aria-hidden="true"></i></div></div></div>');
+        $("#btnAgregarT").prop("disabled",true);
       }
     });
 

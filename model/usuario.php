@@ -55,6 +55,13 @@
         return $sql->fetchAll(PDO::FETCH_OBJ);
      }
 
+     public function listarUsuariosDepartamentos()
+     {
+        $sql = $this->conn->prepare("SELECT * FROM usuario join departamento using(idDepartamento)");
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_OBJ);
+     }
+
      public function listarID($id)
      {
         $sql = $this->conn->prepare("SELECT * FROM usuario join tipousuario using(idTipo) where idUsuario =?");
@@ -93,6 +100,12 @@
       $sql = $this->conn->prepare("UPDATE usuario SET idEdificio = ? WHERE idUsuario = ?");
       $sql->execute(array($edificio,$usuario));
      }
+
+     public function AsignarUsuario($u)
+     {
+      $sql = $this->conn->prepare("INSERT INTO usuario(nombre,rut,correo,idDepartamento) values(?,?,?,?)");
+      $sql->execute(array($u->nombre,$u->rut,$u->correo,$u->idDepartamento));
+      }
 
   }
  ?>

@@ -146,3 +146,20 @@ $(function()
        });
      });
    });
+
+
+   $(function()
+      {
+      $("#idEdificio").on("change",function()
+          {
+            var idEdificio = "";
+
+          idEdificio = $(this).val();
+
+
+          $.post('acciones/accion_filtrar_departamentos.php',{idEdificio:idEdificio},function(datos)
+          {
+            $("#idDepartamento").html(datos);
+          });
+        });
+      });

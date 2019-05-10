@@ -358,6 +358,24 @@ class UsuarioController
       require_once 'view/footer.php';
     }
 
+    public function AsignarUsuariosEdificios()
+    {
+
+        if ($_SESSION['id'] == null)
+         {
+           header('Location:index.php');
+           exit();
+         }
+         $e = new Edificio();
+         $d = new Departamento();
+         $u = new Usuario();
+
+         require_once 'view/header.php';
+         require_once 'view/asignarUsuariosEdificios.php';
+         require_once 'view/footer.php';
+
+    }
+
     public function ListarComunicaciones()
     {
       if ($_SESSION['id'] == null)
@@ -446,6 +464,20 @@ class UsuarioController
       require_once 'view/listarPorcentajes.php';
       require_once 'view/footer.php';
     }
+
+    public function ListarUsuariosDepartamentos()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
+      $u = new Usuario;
+      require_once 'view/header.php';
+      require_once 'view/listarUsuariosDepartamentos.php';
+      require_once 'view/footer.php';
+    }
     //------------------------------------Metodos
 
     public function RegistrarUsuarios()
@@ -490,6 +522,29 @@ class UsuarioController
          //redireccionar a otra pagina mostrando un mensaje de exito
         echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=Index";</script>';
     }
+
+    public function AsignarUsuariosDepartamentos()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+
+      //creacion usuario
+      $u = new Usuario();
+       $u->nombre = $_REQUEST['nombre'];
+       $u->rut = $_REQUEST['rut'];
+       $u->correo = $_REQUEST['correo'];
+       $u->idDepartamento = $_REQUEST['idDepartamento'];
+
+       $this->model_us->AsignarUsuario($u);
+
+       echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=ListarUsuariosDepartamentos";</script>';
+
+
+    }
+
     public function RegistrarUsuarios2()
     {
       if ($_SESSION['id'] == null)
@@ -638,7 +693,7 @@ class UsuarioController
           $this->model_de->Insertar($d);
       }
 
-
+  echo '<script language="javascript">alert("Exito al guardar"); window.location.href="index.php?c=Usuario&a=ListarDepartamentos";</script>';
     }
 
     public function Ingresar()
