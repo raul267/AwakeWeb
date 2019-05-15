@@ -30,6 +30,13 @@ class edificio
      $sql->execute();
      return $sql->fetchAll(PDO::FETCH_OBJ);
    }
+
+   public function ListarID($id)
+   {
+     $sql = $this->conn->prepare("SELECT * FROM edificio e join comunidad c using(idComunidad) where idEdificio = ?");
+     $sql->execute(array($id));
+     return $sql->fetch(PDO::FETCH_OBJ);
+   }
    public function ListarUltimoEdificio()
    {
      $sql = $this->conn->prepare("SELECT max(idEdificio) idEdificio FROM edificio");

@@ -369,6 +369,7 @@ class UsuarioController
          $e = new Edificio();
          $d = new Departamento();
          $u = new Usuario();
+         $t = new tipoUsuario();
 
          require_once 'view/header.php';
          require_once 'view/asignarUsuariosEdificios.php';
@@ -486,15 +487,30 @@ class UsuarioController
          header('Location:index.php');
          exit();
        }
-       $id= $_REQUEST['id'];
+
+      $id= $_REQUEST['id'];
       $e = new Edificio();
-      $e = $this->model_edi->ListarID();
+      $e = $this->model_edi->ListarID($id);
+
       require_once 'view/header.php';
       require_once 'view/listarEdificio.php';
       require_once 'view/footer.php';
     }
 
+    public function Propietarios()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $u = new Usuario();
 
+       require_once 'view/header.php';
+       require_once 'view/listarPropietarios.php';
+       require_once 'view/footer.php';
+
+    }
 
 
 
@@ -560,6 +576,7 @@ class UsuarioController
        $u->rut = $_REQUEST['rut'];
        $u->correo = $_REQUEST['correo'];
        $u->idDepartamento = $_REQUEST['idDepartamento'];
+       $u->idTipo = $_REQUEST['idTipo'];
 
        $this->model_us->AsignarUsuario($u);
 

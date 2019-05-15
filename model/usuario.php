@@ -103,8 +103,8 @@
 
      public function AsignarUsuario($u)
      {
-      $sql = $this->conn->prepare("INSERT INTO usuario(nombre,rut,correo,idDepartamento) values(?,?,?,?)");
-      $sql->execute(array($u->nombre,$u->rut,$u->correo,$u->idDepartamento));
+      $sql = $this->conn->prepare("INSERT INTO usuario(nombre,rut,correo,idDepartamento,idTipo) values(?,?,?,?,?)");
+      $sql->execute(array($u->nombre,$u->rut,$u->correo,$u->idDepartamento,$u->idTipo));
       }
 
   }

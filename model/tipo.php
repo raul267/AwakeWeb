@@ -20,6 +20,13 @@ class Tipousuario
       return $sql->fetchAll(PDO::FETCH_OBJ);
    }
 
+   public function ListarUsuariosDepartamentos()
+   {
+      $sql = $this->conn->prepare("SELECT * from tipousuario WHERE idTipo = 3 || idTipo = 4 || idTipo = 5;");
+      $sql->execute();
+      return $sql->fetchAll(PDO::FETCH_OBJ);
+   }
+
    public function listarID($id)
    {
       $sql = $this->conn->prepare("SELECT * FROM tipousuario where idtipo =?");

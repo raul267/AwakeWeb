@@ -61,6 +61,25 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="login-input-head">
+                                                <p>Tipo Usuario</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="login-input-area">
+                                                <select class="form-control custom-select-value" id="idTipo" name="idTipo">
+                                                  <option value="">Seleccione un tipo de usuario</option>
+                                                  <?php foreach ($t->ListarUsuariosDepartamentos() as $row): ?>
+                                                    <option value="<?php echo $row->idTipo ?>"><?php echo $row->descripcion ?></option>
+                                                  <?php endforeach; ?>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="login-input-head">

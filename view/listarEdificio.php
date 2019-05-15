@@ -1,57 +1,43 @@
 <!-- Breadcome start-->
 
 <!-- Data table area Start-->
-<div class="admin-dashone-data-table-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="sparkline8-list shadow-reset">
-                    <div class="sparkline8-hd">
-                        <div class="main-sparkline8-hd">
-                            <h1>Edificios</h1>
-                            <div class="sparkline8-outline-icon">
-                                <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
-                                <span><i class="fa fa-wrench"></i></span>
-                                <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sparkline8-graph">
-                        <div class="datatable-dashv1-list custom-datatable-overright">
-                            <div id="toolbar">
-                                <select class="form-control">
-                                    <option value="">Exportacion basica</option>
-                                    <option value="all">Exportar todo</option>
-                                    <option value="selected">Exportar elementos seleccionados</option>
-                                </select>
-                            </div>
-                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-                                <thead>
-                                    <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
-                                        <th data-field="Comunidad" data-editable="true">Comunidad</th>
-                                        <th data-field="Direccion" data-editable="true">Direccion</th>
-                                        <th data-field ="Numero pisos">Numero pisos</th>
+<div class="" style="margin-top:10px;">
+  <div class="admin-dashone-data-table-area">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="sparkline8-list shadow-reset">
+                      <div class="sparkline8-hd">
+                          <div class="main-sparkline8-hd">
+                              <?php if ($e->nombreEdificio != null): ?>
+                                <h2>Nmbre edificio <?php echo $e->nombreEdificio ?></h2>
+                              <?php endif; ?>
+                              <h1>Direccion: <?php echo $e->direccionEdificio ?></h1>
+                          </div>
+                          <div class="row" style="margin:10px;">
+                              <div class="col-md-12 col-sm-12">
+                                  <a href="?c=Usuario&a=Propietarios" class="btn btn-primary" style="font-size:40px; width:100%;">Propietarios</a>
+                              </div>
+                          </div>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($e->Listar() as $row): ?>
-                                  <tr>
-                                      <td></td>
-                                      <td><?php echo $row->nombreComunidad ?></td>
-                                      <td><a href="?c=Usuarios&a=ListarEdificio&id=<?php echo $e->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
-                                      <td><?php echo $row->numeroPisos; ?></td>
-                                  </tr>
-                                <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                          <div class="row" style="margin:10px;">
+                              <div class="col-md-12 col-sm-12">
+                                  <a href="?c=Usuario&a=ListarConserjes" class="btn btn-primary" style="font-size:40px; width:100%;">Conserjes</a>
+                              </div>
+                          </div>
+
+                          <div class="row" style="margin:10px;">
+                              <div class="col-md-12 col-sm-12">
+                                  <a href="?c=Usuario&a=Tareas" class="btn btn-primary" style="font-size:40px; width:100%;">Tareas</a>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 <!-- Data table area End-->
 </div>

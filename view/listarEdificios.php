@@ -8,7 +8,7 @@
                             <div class="sparkline8-list shadow-reset">
                                 <div class="sparkline8-hd">
                                     <div class="main-sparkline8-hd">
-                                        <h1>Edificios</h1>
+                                        <h1><?php echo $_SESSION['nombre']." tus edificios son:" ?></h1>
                                         <div class="sparkline8-outline-icon">
                                             <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                                             <span><i class="fa fa-wrench"></i></span>
@@ -40,7 +40,7 @@
                                               <tr>
                                                   <td></td>
                                                   <td><?php echo $row->nombreComunidad ?></td>
-                                                  <td><a href="?c=Usuarios&a=ListarEdificio&id=<?php echo $e->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
+                                                  <td><a href="?c=Usuario&a=ListarEdificio&id=<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
                                                   <td><?php echo $row->numeroPisos; ?></td>
                                               </tr>
                                             <?php endforeach; ?>
