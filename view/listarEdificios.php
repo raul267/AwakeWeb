@@ -31,7 +31,7 @@
                                                     <th data-field="state" data-checkbox="true"></th>
                                                     <th data-field="Comunidad" data-editable="true">Comunidad</th>
                                                     <th data-field="Direccion" data-editable="true">Direccion</th>
-                                                    <th data-field ="Numero edificios">Numero Edificios</th>
+                                                    <th data-field ="Numero pisos">Numero pisos</th>
 
                                                 </tr>
                                             </thead>
@@ -40,7 +40,7 @@
                                               <tr>
                                                   <td></td>
                                                   <td><?php echo $row->nombreComunidad ?></td>
-                                                  <td><?php echo $row->direccionEdificio ?></td>
+                                                  <td><a href="?c=Usuarios&a=ListarEdificio&id=<?php echo $e->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
                                                   <td><?php echo $row->numeroPisos; ?></td>
                                               </tr>
                                             <?php endforeach; ?>

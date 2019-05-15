@@ -15,6 +15,19 @@
                                             <span><i class="fa fa-wrench"></i></span>
                                             <span class="sparkline8-collapse-close"><i class="fa fa-times"></i></span>
                                         </div>
+                                        <div class="row">
+                                          <div class="col-lg-4" style="margin-top:10px;">
+                                              <div class="login-input-area">
+                                                  <select class="form-control custom-select-value" name="filtroEdificio" id="filtroEdificio">
+                                                    <option value="">Selecciona un edificio</option>
+                                                      <?php foreach ($e->Listar() as $row): ?>
+                                                          <option value="<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></option>
+                                                      <?php endforeach; ?>
+                                                  </select>
+
+                                              </div>
+                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="sparkline8-graph">
@@ -37,15 +50,9 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              <?php foreach ($u->listarUsuariosDepartamentos() as $row): ?>
-                                                <tr>
-                                                      <td></td>
-                                                      <td><?php echo $row->rut ?></td>
-                                                      <td><?php echo $row->nombre ?></td>
-                                                      <td><?php echo $row->correo ?></td>
-                                                      <td><?php echo $row->numeroDepartamento ?></td>
-                                                </tr>
-                                                <?php endforeach; ?>
+                                              <div class="" id="divFiltroUsuario" >
+                                                  
+                                              </div>
                                             </tbody>
                                         </table>
                                     </div>

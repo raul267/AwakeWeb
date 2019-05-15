@@ -163,3 +163,20 @@ $(function()
           });
         });
       });
+
+
+      $(function()
+         {
+         $("#filtroEdificio").on("change",function()
+             {
+               var idEdificio = "";
+
+             idEdificio = $(this).val();
+
+
+             $.post('acciones/accion_filtrar_usuarios.php',{idEdificio:idEdificio},function(datos)
+             {
+               $("#divFiltroUsuario").html(datos);
+             });
+           });
+         });

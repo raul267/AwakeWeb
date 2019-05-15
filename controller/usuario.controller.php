@@ -472,12 +472,35 @@ class UsuarioController
          header('Location:index.php');
          exit();
        }
-
+      $e = new Edificio();
       $u = new Usuario;
       require_once 'view/header.php';
       require_once 'view/listarUsuariosDepartamentos.php';
       require_once 'view/footer.php';
     }
+
+    public function ListarEdificio()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $id= $_REQUEST['id'];
+      $e = new Edificio();
+      $e = $this->model_edi->ListarID();
+      require_once 'view/header.php';
+      require_once 'view/listarEdificio.php';
+      require_once 'view/footer.php';
+    }
+
+
+
+
+
+
+
+
     //------------------------------------Metodos
 
     public function RegistrarUsuarios()
@@ -701,8 +724,8 @@ class UsuarioController
 
        date_default_timezone_set('America/Santiago');
       $u = new Usuario();
-      $rut= $_REQUEST['rut'];
-      $pass = $_REQUEST['pass'];
+    $rut = $_REQUEST['rut'];
+    $pass = $_REQUEST['pass'];
       $ultimaConexion = date('m/d/Y g:ia');
       $u = $this->model_us->listarRUT($rut);
       if ($rut == $u->rut && $pass == $u->password && $u->estadoUsuario == 1)
