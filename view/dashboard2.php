@@ -22,6 +22,6 @@
 
 <div class="row" style="margin:10px;">
     <div class="col-md-12 col-sm-12">
-        <a href="?c=Usuario&a=Listar" class="btn btn-primary" style="font-size:40px; width:100%;">Copropietario</a>
+        <a href="?c=Usuario&a=Propietarios" class="btn btn-primary" style="font-size:40px; width:100%;">Copropietario</a>
     </div>
 </div>

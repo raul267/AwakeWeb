@@ -32,6 +32,13 @@ class Comunidad
       return $sql->fetchAll(PDO::FETCH_OBJ);
    }
 
+   public function listarAdministrador($id)
+   {
+      $sql = $this->conn->prepare("SELECT * FROM comunidad c join usuario u on c.idAdmin = u.idUsuario where idUsuario = ?");
+      $sql->execute(array($id));
+      return $sql->fetchAll(PDO::FETCH_OBJ);
+   }
+
    public function listarID($id)
    {
       $sql = $this->conn->prepare("SELECT * FROM comunidad join usuario using() where idComuna =?");

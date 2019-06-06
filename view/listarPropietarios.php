@@ -29,19 +29,19 @@
                                 <thead>
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
-                                        <th data-field="Comunidad" data-editable="true">Comunidad</th>
-                                        <th data-field="Direccion" data-editable="true">Direccion</th>
-                                        <th data-field ="Numero pisos">Numero pisos</th>
+                                        <th data-field="Comunidad" data-editable="true">Propietario</th>
+                                        <th data-field="Direccion" data-editable="true">Departamento</th>
+
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($e->Listar() as $row): ?>
+                                <?php foreach ($u->listarUsuariosDepartamentos() as $row): ?>
                                   <tr>
                                       <td></td>
-                                      <td><?php echo $row->nombreComunidad ?></td>
-                                      <td><a href="?c=Usuario&a=ListarEdificio&id=<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
-                                      <td><?php echo $row->numeroPisos; ?></td>
+                                      <td><?php echo $row->nombre ?></td>
+                                      <td><a href="?c=Usuario&a=ListarDepartamentos&id=<?php echo $row->idDepartamento ?>"><?php echo $row->numeroDepartamento ?></a></td>
+                                      
                                   </tr>
                                 <?php endforeach; ?>
                                 </tbody>

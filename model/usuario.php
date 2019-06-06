@@ -46,7 +46,7 @@
      {
       $sql = $this->conn->prepare("UPDATE `usuario` SET`nombre`=?,`rut`=?,`password`=?,`correo`=?,`idEdificio`=?,`direccion`=?,`idComuna`=?,`idRegion`=?,`Nacionalidad`=?,`fotoPerfil`=?,`fechaNacimiento`=?,ultimaConexion=?,idTipo=?,`telefonoUsuario`=?,`estadoUsuario` =?, `descripcionUsuario` =? WHERE idUsuario = ?");
       $sql->execute(array($us->nombre,$us->rut,$us->password,$us->correo,$us->idEdificio,$us->direccion,$us->idComuna,$us->idRegion,$us->nacionalidad,$us->fotoPerfil,$us->fechaNacimiento,$us->ultimaConexion,$us->idTipo,$us->telefonoUsuario,$us->estadoUsuario, $us->descripcionUsuario,$us->idUsuario));
-     }
+    }
 
      public function listar()
      {
@@ -57,7 +57,9 @@
 
      public function listarUsuariosDepartamentos()
      {
-        $sql = $this->conn->prepare("SELECT * FROM usuario join departamento using(idDepartamento)");
+        $sql = $this->conn->prepare("SELECT * FROM usuario u join departamento d using(idDepartamento)
+                                              join edificio e on e.idEdificio = d.idEdificio
+                                              join comunidad c on e.idComunidad = c.idComunidad");
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_OBJ);
      }

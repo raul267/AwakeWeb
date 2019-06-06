@@ -80,6 +80,7 @@
                     <strong></strong>
                 </div>
                 <div class="left-custom-menu-adp-wrap">
+                  <?php if ($_SESSION['idTipo'] == 0): ?>
                     <ul class="nav navbar-nav left-sidebar-menu-pro">
                         <li class="nav-item">
                             <a href="?c=Usuario&a=Dashboard" role="button" ><i class="fa big-icon fa-home"></i> <span class="mini-dn">Inicio</span> <span class=><i class=""></i></span></a>
@@ -122,6 +123,45 @@
                             </div>
                         </li>
                     </ul>
+                  <?php elseif ($_SESSION['idTipo']> 0):?>
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item">
+                            <a href="?c=Usuario&a=Dashboard" role="button" ><i class="fa big-icon fa-home"></i> <span class="mini-dn">Inicio</span> <span class=><i class=""></i></span></a>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-plus"></i> <span class="mini-dn">Agregar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                          <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                            <a href="?c=Usuario&a=agregarAlarma" class="dropdown-item">Alarma</a>
+                            <a href="?c=Usuario&a=IngresarTareas" class="dropdown-item">Tarea</a>
+                            <a href="?c=Usuario&a=AsignarConserje" class="dropdown-item">Asignar conserje</a>
+                            <a href="?c=Usuario&a=AsignarUsuariosEdificios" class="dropdown-item">Asignar usuarios a edificios</a>
+                          </div>
+                        </li>
+
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-eye"></i> <span class="mini-dn">Listar</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                          <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                            <a href="?c=Usuario&a=ListarUsuariosDepartamentos" class="dropdown-item">Usuarios por departamento</a>
+                            <a href="?c=Usuario&a=ListarConserjes" class="dropdown-item">Conserjes</a>
+                            <a href="?c=Usuario&a=Comunidades" class="dropdown-item">Comunidades</a>
+                            <a href="?c=Usuario&a=Edificios" class="dropdown-item">Edificios</a>
+                            <a href="?c=Usuario&a=ListarDepartamentos" class="dropdown-item">Departamentos</a>
+                            <a href="?c=Usuario&a=Alarmas" class="dropdown-item">Alarmas</a>
+                            <a href="?c=Usuario&a=Tareas" class="dropdown-item">Tareas</a>
+                          </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-star"></i> <span class="mini-dn">Calificaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="?c=Usuario&a=VerPorcentajes" class="dropdown-item">Ver porcentajes</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">Comunicaciones</span> <span class="indicator-right-menu mini-dn"><i class="fa indicator-mn fa-angle-left"></i></span></a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a href="?c=Usuario&a=AgregarComunicacion" class="dropdown-item">Escribir comunicacion</a>
+                                <a href="?c=Usuario&a=ListarComunicaciones" class="dropdown-item">Ver comunicaciones</a>
+                            </div>
+                        </li>
+                    </ul>
+                  <?php endif; ?>
                 </div>
             </nav>
         </div>

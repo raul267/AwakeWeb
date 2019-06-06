@@ -37,6 +37,14 @@ class departamento
      return $sql->fetch(PDO::FETCH_OBJ);
    }
 
+
+      public function ListarDepaDDL()
+      {
+        $sql = $this->conn->prepare("SELECT * from departamento;");
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_OBJ);
+      }
+
 }
 
  ?>

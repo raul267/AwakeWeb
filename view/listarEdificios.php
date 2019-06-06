@@ -36,6 +36,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                          <?php if ($_SESSION['idTipo'] >0): ?>
+                                            <?php foreach ($e->ListarAdministrador($idAdmin) as $row): ?>
+                                              <tr>
+                                                  <td></td>
+                                                  <td><?php echo $row->nombreComunidad ?></td>
+                                                  <td><a href="?c=Usuario&a=ListarEdificio&id=<?php echo $row->idEdificio ?>"><?php echo $row->direccionEdificio ?></a></td>
+                                                  <td><?php echo $row->numeroPisos; ?></td>
+                                              </tr>
+                                            <?php endforeach; ?>
+                                          <?php elseif ($_SESSION['idTipo'] == 0): ?>
                                             <?php foreach ($e->Listar() as $row): ?>
                                               <tr>
                                                   <td></td>
@@ -44,6 +54,7 @@
                                                   <td><?php echo $row->numeroPisos; ?></td>
                                               </tr>
                                             <?php endforeach; ?>
+                                          <?php endif; ?>
                                             </tbody>
                                         </table>
                                     </div>

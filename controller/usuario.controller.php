@@ -9,9 +9,10 @@ require_once 'model/edificio.php';
 require_once 'model/alarma.php';
 require_once 'model/tarea.php';
 require_once 'model/comunicaciones.php';
-require_once 'model/porcalificaciones.php';
+require_once 'model/porCalificaciones.php';
 require_once 'model/calificaciones.php';
 require_once 'model/departamento.php';
+require_once 'model/gastocomun.php';
 
 session_start();
 class UsuarioController
@@ -29,6 +30,7 @@ class UsuarioController
   private $model_porc;
   private $model_ca;
   private $model_de;
+  private $model_gc;
   public function __CONSTRUCT()
    {
      $this->model_us = new Usuario();
@@ -44,6 +46,7 @@ class UsuarioController
      $this->model_porc = new PorCalificaciones();
      $this->model_ca  = new Calificacion();
      $this->model_de = new Departamento();
+     $this->model_gc = new Gastocomun();
    }
 
 
@@ -72,11 +75,6 @@ class UsuarioController
     public function Registrar()
     {
 
-      if ($_SESSION['id'] == null)
-       {
-         header('Location:index.php');
-         exit();
-       }
 
       $u = new Usuario();
       $r = new Region();
@@ -212,6 +210,7 @@ class UsuarioController
        }
 
       $e = new Edificio();
+      $idAdmin = $_SESSION['id'];  
 
       require_once 'view/header.php';
       require_once 'view/listarEdificios.php';
@@ -506,13 +505,42 @@ class UsuarioController
        }
        $u = new Usuario();
 
+
        require_once 'view/header.php';
        require_once 'view/listarPropietarios.php';
        require_once 'view/footer.php';
-
     }
 
+    public function RegistrarGastoComun()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $d = new Departamento();
+       $g = new Gastocomun();
 
+
+       require_once 'view/header.php';
+       require_once 'view/agregarGastoComun.php';
+       require_once 'view/footer.php';
+    }
+
+    public function ListarGastoComun()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $g = new Gastocomun();
+
+
+       require_once 'view/header.php';
+       require_once 'view/listarGastos.php';
+       require_once 'view/footer.php';
+    }
 
 
 
@@ -521,11 +549,6 @@ class UsuarioController
 
     public function RegistrarUsuarios()
     {
-      if ($_SESSION['id'] == null)
-       {
-         header('Location:index.php');
-         exit();
-       }
 
       //creacion usuario
       $u = new Usuario();
@@ -741,8 +764,8 @@ class UsuarioController
 
        date_default_timezone_set('America/Santiago');
       $u = new Usuario();
-    $rut = $_REQUEST['rut'];
-    $pass = $_REQUEST['pass'];
+      $rut = $_REQUEST['rut'];
+      $pass = $_REQUEST['pass'];
       $ultimaConexion = date('m/d/Y g:ia');
       $u = $this->model_us->listarRUT($rut);
       if ($rut == $u->rut && $pass == $u->password && $u->estadoUsuario == 1)
@@ -752,6 +775,7 @@ class UsuarioController
         $_SESSION['idTipo'] = $u->idTipo;
         $_SESSION['ultimaConexion'] = $u->ultimaConexion;
         $_SESSION['fotoPerfil'] = $u->fotoPerfil;
+        $_SESSION['idEdificio'] = $u->idEdificio;
         $this->model_us->ActualizarConeccion($ultimaConexion,$u->idUsuario);
         header('Location: ?c=Usuario&a=Dashboard');
 
@@ -898,6 +922,35 @@ class UsuarioController
       $this->model_comunicacion->Delete($id);
 
     header('Location: ?c=Usuario&a=ListarComunicaciones');
+    }
+
+    public function RegistrarGasto()
+    {
+      if ($_SESSION['id'] == null)
+       {
+         header('Location:index.php');
+         exit();
+       }
+       $g = new Gastocomun();
+
+        $g->desde = $_REQUEST['desde'];
+        $g->hasta = $_REQUEST['hasta'];
+        $g->fechaVencimiento = $_REQUEST['fechaVencimiento'];
+        $g->monto = $_REQUEST['monto'];
+        $g->idDepartamento = $_REQUEST['idDepartamento'];
+
+       $i = $_FILES['imgGasto']['name'];
+       $ext = strtolower(pathinfo($i,PATHINFO_EXTENSION));
+       $archivo = $_FILES['imgGasto']['tmp_name'];
+       $ruta = "assets/img/gastocomun/";
+       $ruta = $ruta.$_REQUEST['idDepartamento'].$_REQUEST['fechaVencimiento'].".".$ext;
+
+       move_uploaded_file($archivo, $ruta);
+        $g->imgGasto = $ruta;
+
+        $this->model_gc->Insertar($g);
+        header('Location: ?c=Usuario&a=ListarGastoComun');
+
     }
 }
  ?>
