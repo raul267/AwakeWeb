@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DEMO Banco</title>
+
+<script src="jquery.js" charset="utf-8"></script>
+<script src="clima.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
+
+</head>
+
+<body>
+
+	<div id="wrapleft">
+
+		<div id="video">
+          <div class="w3-content w3-section" style="max-width:500px">
+          <img class="mySlides" id="video" src="images/1.jpg">
+          <img class="mySlides" id="video" src="images/2.jpg">
+          <img class="mySlides" id="video" src="images/3.jpg">
+            </div>
+        </div>
+
+		<div id="foot">
+			<div id="clima">
+				<div id="">
+				<img class="clima" id="imgClima">
+			</div>
+			<div id="txtTemperatura">
+				<h1 id="tempe"></h1>
+			</div>
+			</div>
+			<div id="valores">
+				<marquee><div id="divMenu"></div></marquee>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="wrapright">
+		<div id="cumpleaños">
+			<div>
+				<h1>Cumpleaños del dia</h1>
+			</div>
+			<div id="divCumpleanos">
+
+			</div>
+		</div>
+
+		<div id="actividades">
+			<h1>Actividades</h1>
+            <div id="divActividades"></div>
+		</div>
+		<div id="hora">
+			<div id="a"></div>
+				 <div id="picture"></div>
+				 <input type="hidden"id="result"/>
+		</div>
+  	</div>
+    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 10000); // Change image every 2 seconds
+}
+</script>
+    <script src="reloj.js" charset="utf-8"></script>
+
+</body>
+</html>
